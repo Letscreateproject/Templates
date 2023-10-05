@@ -31,6 +31,8 @@ import { SharedComponentModule } from './components/shared-component/shared-comp
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AddApplicantComponent } from './components/add-applicant/add-applicant.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -50,6 +52,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     ShoppinglistComponent,
     SignupComponent,
     ForgotPasswordComponent,
+    AddApplicantComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

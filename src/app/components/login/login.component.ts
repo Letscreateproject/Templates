@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
-      this.router.navigate(['/home/process']);
+      this.router.navigate(['/home/dashboard']);
       // } else {
       //   this.router.navigate(['/home/voucherlist']);
       // }

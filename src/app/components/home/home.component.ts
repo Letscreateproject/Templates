@@ -12,6 +12,36 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.value = localStorage.getItem('Operator');
   }
+  menuItems: any = [
+    {
+      id: 1,
+      menuItemDisplayName: 'Dashboard',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'dashboard',
+      menuItemCode: 'dashboard',
+    },
+    {
+      id: 1,
+      menuItemDisplayName: 'Upload Document',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'process',
+      menuItemCode: 'process',
+    },
+    {
+      id: 1,
+      menuItemDisplayName: 'Document List',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'voucherlist',
+      menuItemCode: 'voucherlist',
+    },
+    {
+      id: 1,
+      menuItemDisplayName: 'Add Applicant',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'addapplicant',
+      menuItemCode: 'addapplicant',
+    },
+  ];
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = true;
   showSubmenu: boolean = false;

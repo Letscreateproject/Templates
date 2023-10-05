@@ -1,18 +1,16 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <!-- <button mat-icon-button>
-       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-      </button> -->
-      <!-- <h1>SimpleCRM</h1>
-      <span class="menu-spacer"></span> -->
-      <div>
-          
-        <!-- <a mat-button [routerLink]="'dashboard'" routerLinkActive="activebutton" > Dashboard </a> -->
-        <a mat-button  *ngIf="value == 'Operator' || value == 'operator'" [routerLink]="'process'" routerLinkActive="activebutton" > Create Voucher </a>
-        <!-- <a mat-button [routerLink]="'users'" routerLinkActive="activebutton" > Users </a> -->
-        <a mat-button *ngIf="value == 'Manager'|| value == 'manager'" [routerLink]="'voucherlist'"  routerLinkActive="activebutton" > Voucher List </a>
-        <!-- <a mat-button [routerLink]="'shopping'" routerLinkActive="activebutton" > Shopping List </a> -->
+<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+  (mouseleave)="mouseleave()">
+  <div class="sub-side">
+    <mat-nav-list>
+      <mat-list-item [routerLink]="'process'" routerLinkActive="activebutton" class="parent activebutton"
+        *ngFor="let item of menuItems">
+        <img src="{{item.menuItemIcon}}" alt="" class="img-st" />
+        <span class="full-width" *ngIf="isExpanded || isShowing">{{item.menuItemDisplayName}}</span>
+      </mat-list-item>
 
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
+    </mat-nav-list>
+    <mat-nav-list>
+    </mat-nav-list>
+
+  </div>
+</mat-sidenav>

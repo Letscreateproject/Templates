@@ -1,0 +1,31 @@
+.main-d-class{
+    display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  padding: 10px;
+  .card-item{
+margin-right: 10px;
+margin-bottom: 10px;
+  }
+  .sched{
+    color: green;
+  }
+  mat-card-header{
+    border-bottom: 1px dashed #c6c6c6;
+    ::ng-deep .mat-card-header-text{
+        margin: 0;
+      }
+  }
+  mat-card-content{
+    border-bottom: 1px dashed #c6c6c6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+  }
+  mat-card-actions{
+    margin-left: 0px;
+  }
+  
+}
+.det-btn{
+  margin-left: 0px !important;
+}

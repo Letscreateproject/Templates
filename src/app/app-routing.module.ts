@@ -10,6 +10,8 @@ import { UserformComponent } from './components/userform/userform.component';
 import { UserlistComponent } from './components/userlist/userlist.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AddApplicantComponent } from './components/add-applicant/add-applicant.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,14 @@ const routes: Routes = [
       {
         path: 'users',
         component: UserlistComponent,
+      },
+      {
+        path: 'addapplicant',
+        component: AddApplicantComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
       },
       {
         path: 'userform',

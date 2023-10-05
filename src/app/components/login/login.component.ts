@@ -25,25 +25,10 @@ export class LoginComponent implements OnInit {
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
-      if (
-        this.profileForm.value.username == 'Operator' ||
-        this.profileForm.value.username == 'Manager' ||
-        this.profileForm.value.username == 'operator' ||
-        this.profileForm.value.username == 'manager'
-      ) {
-        // debugger
-        localStorage.setItem('Operator', this.profileForm.value.username);
-        if (
-          this.profileForm.value.username == 'Operator' ||
-          this.profileForm.value.username == 'operator'
-        ) {
-          this.router.navigate(['/home/process']);
-        } else {
-          this.router.navigate(['/home/voucherlist']);
-        }
-      } else {
-        alert('No User Found');
-      }
+      this.router.navigate(['/home/process']);
+      // } else {
+      //   this.router.navigate(['/home/voucherlist']);
+      // }
     }
     //
   }

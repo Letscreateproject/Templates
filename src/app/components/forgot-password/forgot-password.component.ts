@@ -3,11 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
   profileForm: any = FormGroup;
   constructor(private router: Router) {}
 
@@ -45,12 +45,8 @@ export class LoginComponent implements OnInit {
         alert('No User Found');
       }
     }
-    //
   }
-  signup() {
-    this.router.navigate(['/signup']);
-  }
-  forgot() {
-    this.router.navigate(['/forgotpassword']);
+  signIn() {
+    this.router.navigate(['/login']);
   }
 }

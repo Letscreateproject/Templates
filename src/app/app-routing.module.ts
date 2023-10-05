@@ -8,52 +8,60 @@ import { ShoppinglistComponent } from './components/shoppinglist/shoppinglist.co
 import { UploadComponent } from './components/upload/upload.component';
 import { UserformComponent } from './components/userform/userform.component';
 import { UserlistComponent } from './components/userlist/userlist.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
-    path : '',
-  component : LoginComponent
+    path: '',
+    component: LoginComponent,
   },
   {
-    path : 'login',
-    component : LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path : 'home',
-    component : HomeComponent,
-    children : [
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'forgotpassword',
+    component: ForgotPasswordComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
       // {
       //   path : 'dashboard',
       //   component : DownloadComponent
       // },
       {
-        path : 'process',
-        component : UploadComponent
+        path: 'process',
+        component: UploadComponent,
       },
       {
-        path : 'users',
-        component : UserlistComponent
+        path: 'users',
+        component: UserlistComponent,
       },
       {
-        path : 'userform',
-        component : UserformComponent
+        path: 'userform',
+        component: UserformComponent,
       },
       {
-        path : 'voucherlist',
-        component : AuditComponent
+        path: 'voucherlist',
+        component: AuditComponent,
       },
       {
-        path : 'shopping',
-        component : ShoppinglistComponent
+        path: 'shopping',
+        component: ShoppinglistComponent,
       },
-      
-    ]
-  }
+    ],
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

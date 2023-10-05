@@ -29,6 +29,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { SharedComponentModule } from './components/shared-component/shared-component.module';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { SignupComponent } from './components/signup/signup.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -46,6 +48,8 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     DndDirective,
     AuditComponent,
     ShoppinglistComponent,
+    SignupComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

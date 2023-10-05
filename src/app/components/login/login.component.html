@@ -42,7 +42,7 @@
             </mat-error>
           </mat-form-field>
 
-          <a href="javascript:;" style="    color: #333;
+          <a href="javascript:;" (click)="forgot()" style="    color: #333;
           font-size: 11px;">Forgot Password?</a>
 
         </div>
@@ -55,6 +55,9 @@
 
         <!-- <button mat-button>SHARE</button> -->
       </mat-card-actions>
+      <div class="bottom-div">
+        <a href="javascript:;" (click)="signup()">New User?<span> Register</span> </a>
+      </div>
     </form>
   </mat-card>
 </div>

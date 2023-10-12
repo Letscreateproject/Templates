@@ -33,6 +33,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AddApplicantComponent } from './components/add-applicant/add-applicant.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { Dashboard2Component } from './components/dashboard2/dashboard2.component';
+import { FooterComponent } from './components/footer/footer.component';
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -54,6 +56,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ForgotPasswordComponent,
     AddApplicantComponent,
     DashboardComponent,
+    Dashboard2Component,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

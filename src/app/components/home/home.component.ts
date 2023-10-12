@@ -22,6 +22,13 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 1,
+      menuItemDisplayName: 'Dashboard 2',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'dashboard2',
+      menuItemCode: 'dashboard2',
+    },
+    {
+      id: 1,
       menuItemDisplayName: 'Upload Document',
       menuItemIcon: 'assetsico-1.svg',
       menuItemUrl: 'process',

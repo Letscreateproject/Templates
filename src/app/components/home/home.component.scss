@@ -1,6 +1,4 @@
-.header-cont {
-    width: 100%;
-}
+
 .p-class{
     border-bottom: 1px solid #ddd;
 }
@@ -56,13 +54,7 @@
   .parent{
     color: #fff;
   }
-  .footer{
-    flex-shrink: 0;
-    flex-grow: 0;
-    background: #eee;
-    padding: 17px 15px;  
-     font-size: 10px;
-  }
+  
   .sub-side{
     display: flex;
     flex-direction: column;

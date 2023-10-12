@@ -2,7 +2,7 @@
   (mouseleave)="mouseleave()">
   <div class="sub-side">
     <mat-nav-list>
-      <mat-list-item [routerLink]="'process'" routerLinkActive="activebutton" class="parent activebutton"
+      <mat-list-item [routerLink]="item.menuItemUrl" routerLinkActive="activebutton" class="parent"
         *ngFor="let item of menuItems">
         <img src="{{item.menuItemIcon}}" alt="" class="img-st" />
         <span class="full-width" *ngIf="isExpanded || isShowing">{{item.menuItemDisplayName}}</span>

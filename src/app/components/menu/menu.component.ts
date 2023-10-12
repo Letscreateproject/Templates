@@ -13,6 +13,20 @@ export class MenuComponent implements OnInit {
   menuItems: any = [
     {
       id: 1,
+      menuItemDisplayName: 'Dashboard',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'dashboard',
+      menuItemCode: 'dashboard',
+    },
+    {
+      id: 1,
+      menuItemDisplayName: 'Dashboard 2',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'dashboard2',
+      menuItemCode: 'dashboard2',
+    },
+    {
+      id: 1,
       menuItemDisplayName: 'Upload Document',
       menuItemIcon: 'assetsico-1.svg',
       menuItemUrl: 'process',
@@ -24,6 +38,13 @@ export class MenuComponent implements OnInit {
       menuItemIcon: 'assetsico-1.svg',
       menuItemUrl: 'voucherlist',
       menuItemCode: 'voucherlist',
+    },
+    {
+      id: 1,
+      menuItemDisplayName: 'Add Applicant',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'addapplicant',
+      menuItemCode: 'addapplicant',
     },
   ];
 

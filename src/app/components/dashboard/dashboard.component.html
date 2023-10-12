@@ -1,5 +1,6 @@
 <app-common-page-header [header]="'Dashboard'"></app-common-page-header>
-<div class="main-d-class"><mat-card class="card-item" *ngFor="let item of cardList">
+<div class="main-d-class">
+    <mat-card class="card-item" *ngFor="let item of cardList">
         <mat-card-header>
             <mat-card-title>{{item.fullName}}</mat-card-title>
             <mat-card-subtitle class="sched">{{item.status}}</mat-card-subtitle>
@@ -32,4 +33,5 @@
             </div>
 
         </mat-card-actions>
-    </mat-card></div>
+    </mat-card>
+</div>

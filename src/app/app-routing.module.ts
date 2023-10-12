@@ -12,6 +12,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AddApplicantComponent } from './components/add-applicant/add-applicant.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { Dashboard2Component } from './components/dashboard2/dashboard2.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'dashboard2',
+        component: Dashboard2Component,
       },
       {
         path: 'userform',

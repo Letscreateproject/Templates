@@ -108,6 +108,9 @@
                                 {{option}}
                               </mat-option>
                             </mat-autocomplete>
+                            <mat-error *ngIf="profileForm.get('autocomplete').errors?.['required']">
+                                This field is required
+                            </mat-error>
                           </mat-form-field>
                     
 

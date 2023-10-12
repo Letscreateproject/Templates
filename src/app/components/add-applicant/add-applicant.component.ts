@@ -26,7 +26,7 @@ export class AddApplicantComponent implements OnInit {
         Validators.minLength(3),
       ]),
       password: new FormControl('', Validators.required),
-      autocomplete: new FormControl(''),
+      autocomplete: new FormControl('', Validators.required),
     });
     this.filteredOptions = this.profileForm.controls.autocomplete.valueChanges.pipe(
       startWith(''),

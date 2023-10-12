@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable, map, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-add-applicant',
@@ -14,6 +15,8 @@ export class AddApplicantComponent implements OnInit {
     { viewValue: 'Male', value: 'Male' },
     { viewValue: 'Female', value: 'Female' },
   ];
+  options: string[] = ['Option1', 'Option2', 'Option3'];
+  filteredOptions!: Observable<string[]>;
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
@@ -23,7 +26,18 @@ export class AddApplicantComponent implements OnInit {
         Validators.minLength(3),
       ]),
       password: new FormControl('', Validators.required),
+      autocomplete: new FormControl(''),
     });
+    this.filteredOptions = this.profileForm.controls.autocomplete.valueChanges.pipe(
+      startWith(''),
+      map((value:any) => this._filter(value || '')),
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
   submit() {

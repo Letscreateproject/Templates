@@ -35,6 +35,7 @@ import { AddApplicantComponent } from './components/add-applicant/add-applicant.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Dashboard2Component } from './components/dashboard2/dashboard2.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -63,6 +64,7 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    MatAutocompleteModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,

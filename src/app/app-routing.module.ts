@@ -13,6 +13,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AddApplicantComponent } from './components/add-applicant/add-applicant.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Dashboard2Component } from './components/dashboard2/dashboard2.component';
+import { ShoppingBasketComponent } from './components/shopping-basket/shopping-basket.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
         path: 'shopping',
         component: ShoppinglistComponent,
       },
+      {
+        path: 'shoppingBasket',
+        component:ShoppingBasketComponent,
+      }
     ],
   },
 ];

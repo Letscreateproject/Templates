@@ -36,6 +36,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Dashboard2Component } from './components/dashboard2/dashboard2.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ShoppingBasketComponent } from './components/shopping-basket/shopping-basket.component';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -59,6 +61,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     DashboardComponent,
     Dashboard2Component,
     FooterComponent,
+    ShoppingBasketComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +89,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatSortModule,
     SharedComponentModule,
     MatSidenavModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -48,6 +48,13 @@ export class HomeComponent implements OnInit {
       menuItemUrl: 'addapplicant',
       menuItemCode: 'addapplicant',
     },
+    {
+      id: 1,
+      menuItemDisplayName: 'Shopping basket',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'shoppingBasket',
+      menuItemCode: 'shoppingBasket',
+    },
   ];
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = true;

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable, map, startWith } from 'rxjs';
+import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 
 @Component({
   selector: 'app-add-applicant',
@@ -10,7 +12,7 @@ import { Observable, map, startWith } from 'rxjs';
 })
 export class AddApplicantComponent implements OnInit {
   profileForm: any = FormGroup;
-  constructor(private router: Router) {}
+  constructor(private router: Router,public dialog: MatDialog) {}
   gender: any = [
     { viewValue: 'Male', value: 'Male' },
     { viewValue: 'Female', value: 'Female' },
@@ -66,5 +68,18 @@ export class AddApplicantComponent implements OnInit {
   }
   signIn() {
     this.router.navigate(['/login']);
+  }
+  openDialog(){
+    const dialogRef = this.dialog.open(DialogboxComponent, {
+      width: '700px',
+      height:'270px',
+
+      data: {
+        data: "data"
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      
+    });
   }
 }

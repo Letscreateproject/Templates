@@ -14,6 +14,8 @@ import { AddApplicantComponent } from './components/add-applicant/add-applicant.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Dashboard2Component } from './components/dashboard2/dashboard2.component';
 import { ShoppingBasketComponent } from './components/shopping-basket/shopping-basket.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { ApplicantDetailsComponent } from './components/applicant-details/applicant-details.component';
 
 const routes: Routes = [
   {
@@ -53,12 +55,21 @@ const routes: Routes = [
         component: AddApplicantComponent,
       },
       {
+        path: 'applicantdetails',
+        component: ApplicantDetailsComponent,
+      },
+
+      {
         path: 'dashboard',
         component: DashboardComponent,
       },
       {
         path: 'dashboard2',
         component: Dashboard2Component,
+      },
+      {
+        path: 'tabs',
+        component: TabsComponent,
       },
       {
         path: 'userform',
@@ -74,8 +85,8 @@ const routes: Routes = [
       },
       {
         path: 'shoppingBasket',
-        component:ShoppingBasketComponent,
-      }
+        component: ShoppingBasketComponent,
+      },
     ],
   },
 ];

@@ -43,6 +43,20 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 1,
+      menuItemDisplayName: 'Applicant List',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'users',
+      menuItemCode: 'users',
+    },
+    {
+      id: 1,
+      menuItemDisplayName: 'Applicant Details',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'applicantdetails',
+      menuItemCode: 'applicantdetails',
+    },
+    {
+      id: 1,
       menuItemDisplayName: 'Add Applicant',
       menuItemIcon: 'assetsico-1.svg',
       menuItemUrl: 'addapplicant',
@@ -54,6 +68,12 @@ export class HomeComponent implements OnInit {
       menuItemIcon: 'assetsico-1.svg',
       menuItemUrl: 'shoppingBasket',
       menuItemCode: 'shoppingBasket',
+    },
+    {
+      menuItemDisplayName: 'Tabs',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'tabs',
+      menuItemCode: 'tabs',
     },
   ];
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;

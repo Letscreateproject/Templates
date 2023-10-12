@@ -12,8 +12,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonPageHeaderComponent } from './common-page-header/common-page-header.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 @NgModule({
-  declarations: [TableListComponent, CommonPageHeaderComponent],
+  declarations: [
+    TableListComponent,
+    CommonPageHeaderComponent,
+    BarChartComponent,
+    LineChartComponent,
+    PieChartComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -28,6 +37,12 @@ import { CommonPageHeaderComponent } from './common-page-header/common-page-head
     MatFormFieldModule,
     MatInputModule,
   ],
-  exports: [TableListComponent, CommonPageHeaderComponent],
+  exports: [
+    TableListComponent,
+    CommonPageHeaderComponent,
+    BarChartComponent,
+    PieChartComponent,
+    LineChartComponent,
+  ],
 })
 export class SharedComponentModule {}

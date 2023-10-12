@@ -38,7 +38,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import { ShoppingBasketComponent } from './components/shopping-basket/shopping-basket.component';
-import { DragDropModule } from '@angular/cdk/drag-drop'
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ApplicantDetailsComponent } from './components/applicant-details/applicant-details.component';
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -64,6 +67,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
     FooterComponent,
     DialogboxComponent,
     ShoppingBasketComponent,
+    TabsComponent,
+    ApplicantDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +96,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
     MatSortModule,
     SharedComponentModule,
     MatSidenavModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

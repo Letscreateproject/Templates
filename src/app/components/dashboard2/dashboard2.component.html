@@ -1,1 +1,20 @@
-<p>dashboard2 works!</p>
+<app-common-page-header [header]="'Dashboard 2'"></app-common-page-header>
+<mat-card class="example-card signup-page">
+
+    <mat-card-content>
+
+        <div fxLayout="column" fxLayoutAlign="flex-start">
+
+            <div class="grid-class">
+                <div style="height: 300px;width: 500px;"><app-bar-chart></app-bar-chart></div>
+                <div style="height: 300px;width: 500px;"><app-line-chart></app-line-chart> </div>
+                <div style="height: 300px;width: 500px;"><app-pie-chart></app-pie-chart> </div>
+            </div>
+
+
+
+
+        </div>
+    </mat-card-content>
+
+</mat-card>

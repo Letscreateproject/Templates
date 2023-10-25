@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
         Validators.maxLength(10),
         Validators.minLength(3),
       ]),
-      password: new FormControl('', Validators.required),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(3),
+      ]),
     });
   }
 
@@ -26,11 +30,7 @@ export class LoginComponent implements OnInit {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
       this.router.navigate(['/home/dashboard']);
-      // } else {
-      //   this.router.navigate(['/home/voucherlist']);
-      // }
     }
-    //
   }
   signup() {
     this.router.navigate(['/signup']);

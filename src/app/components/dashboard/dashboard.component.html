@@ -1,37 +1,5 @@
 <app-common-page-header [header]="'Dashboard'"></app-common-page-header>
 <div class="main-d-class">
-    <mat-card class="card-item" *ngFor="let item of cardList">
-        <mat-card-header>
-            <mat-card-title>{{item.fullName}}</mat-card-title>
-            <mat-card-subtitle class="sched">{{item.status}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start ">
-                    <p><img src="assets/images/svg/appoin-addres.svg" alt="" /> {{item.location}}</p>
+    <ng-container *ngFor="let item of cardList"> <app-common-card [item]="item"></app-common-card></ng-container>
 
-                </div>
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
-                    <img src="assets/images/svg/appoin-clock.svg" alt="" />
-                    <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                        <div>{{item.date}}</div>
-                        <div>{{item.time}}</div>
-                    </div>
-
-                </div>
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <div fxLayout="column" fxLayoutGap="10px">
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
-                    <img src="assets/images/svg/appo-1.svg" alt="" />
-                    <img src="assets/images/svg/appo-2.svg" alt="" />
-                    <img src="assets/images/svg/appo-3.svg" alt="" />
-                </div>
-
-                <button mat-raised-button color="primary" type="button" class="det-btn">Details</button>
-            </div>
-
-        </mat-card-actions>
-    </mat-card>
 </div>

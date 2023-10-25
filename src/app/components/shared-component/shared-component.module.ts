@@ -15,6 +15,9 @@ import { CommonPageHeaderComponent } from './common-page-header/common-page-head
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { CommonCardComponent } from './common-card/common-card.component';
+import { MaterialModule } from '../material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     TableListComponent,
@@ -22,6 +25,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     BarChartComponent,
     LineChartComponent,
     PieChartComponent,
+    CommonCardComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +40,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     TextFieldModule,
     MatFormFieldModule,
     MatInputModule,
+    MaterialModule,
+    FlexLayoutModule,
   ],
   exports: [
     TableListComponent,
@@ -43,6 +49,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     BarChartComponent,
     PieChartComponent,
     LineChartComponent,
+    CommonCardComponent,
   ],
 })
 export class SharedComponentModule {}

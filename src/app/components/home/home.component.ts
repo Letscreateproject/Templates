@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 1,
-      menuItemDisplayName: 'Shopping basket',
+      menuItemDisplayName: 'Drag and Drop',
       menuItemIcon: 'assetsico-1.svg',
       menuItemUrl: 'shoppingBasket',
       menuItemCode: 'shoppingBasket',

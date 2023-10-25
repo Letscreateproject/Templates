@@ -9,7 +9,7 @@
 
             </div>
             <button mat-icon-button color="primary" [matMenuTriggerFor]="menu" style="width: 80px;
-      color: #333;">
+      color: #333;border-radius: 5%;">
                 <div style="display:flex;text-transform:capitalize ;">
                     <div> <img src="assets\user-name.svg" alt="" /></div>
                     <div>{{value}}</div>
@@ -18,7 +18,7 @@
             </button>
 
             <mat-menu #menu="matMenu">
-                <button mat-menu-item> <mat-icon>person</mat-icon>
+                <button mat-menu-item routerLink="applicantdetails"> <mat-icon>person</mat-icon>
                     <span>Profile</span></button>
                 <button mat-menu-item routerLink="/login"> <mat-icon>logout</mat-icon>
                     <span>Logout</span></button>

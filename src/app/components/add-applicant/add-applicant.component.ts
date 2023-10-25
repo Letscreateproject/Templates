@@ -12,7 +12,7 @@ import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 })
 export class AddApplicantComponent implements OnInit {
   profileForm: any = FormGroup;
-  constructor(private router: Router,public dialog: MatDialog) {}
+  constructor(private router: Router, public dialog: MatDialog) {}
   gender: any = [
     { viewValue: 'Male', value: 'Male' },
     { viewValue: 'Female', value: 'Female' },
@@ -22,64 +22,59 @@ export class AddApplicantComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
-      username: new FormControl('', [
+      firstName: new FormControl('', [
         Validators.required,
         Validators.maxLength(10),
         Validators.minLength(3),
       ]),
-      password: new FormControl('', Validators.required),
-      autocomplete: new FormControl('', Validators.required),
+      lastName: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(3),
+      ]),
+      dob: new FormControl(''),
+      gender: new FormControl(''),
+      email: new FormControl('', Validators.required),
+      phone: new FormControl(''),
+      address1: new FormControl('', Validators.required),
+      address2: new FormControl(''),
+      autocomplete: new FormControl(''),
+      mfaEnabed: new FormControl(''),
     });
-    this.filteredOptions = this.profileForm.controls.autocomplete.valueChanges.pipe(
-      startWith(''),
-      map((value:any) => this._filter(value || '')),
-    );
+    this.filteredOptions =
+      this.profileForm.controls.autocomplete.valueChanges.pipe(
+        startWith(''),
+        map((value: any) => this._filter(value || ''))
+      );
   }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
-      if (
-        this.profileForm.value.username == 'Operator' ||
-        this.profileForm.value.username == 'Manager' ||
-        this.profileForm.value.username == 'operator' ||
-        this.profileForm.value.username == 'manager'
-      ) {
-        // debugger
-        localStorage.setItem('Operator', this.profileForm.value.username);
-        if (
-          this.profileForm.value.username == 'Operator' ||
-          this.profileForm.value.username == 'operator'
-        ) {
-          this.router.navigate(['/home/process']);
-        } else {
-          this.router.navigate(['/home/voucherlist']);
-        }
-      } else {
-        alert('No User Found');
-      }
+      // success
     }
   }
   signIn() {
     this.router.navigate(['/login']);
   }
-  openDialog(){
+
+  openDialog() {
     const dialogRef = this.dialog.open(DialogboxComponent, {
       width: '700px',
-      height:'270px',
+      height: '270px',
 
       data: {
-        data: "data"
+        data: 'data',
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {
-      
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

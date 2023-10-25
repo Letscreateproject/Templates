@@ -8,5 +8,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
 color: #BAB8B8 !important;
 }
+.grid-class{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    grid-gap:5px
+}
 
 

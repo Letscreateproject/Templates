@@ -42,6 +42,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ApplicantDetailsComponent } from './components/applicant-details/applicant-details.component';
+import { RuleBuilderComponent } from './components/rule-builder/rule-builder.component';
+import { RuleContainerComponent } from './components/rule-builder/components/rule-container/rule-container.component';
+import { ActionBarComponent } from './components/rule-builder/components/action-bar/action-bar.component';
+import { GroupComponent } from './components/rule-builder/components/group/group.component';
+
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
 @NgModule({
@@ -69,6 +74,10 @@ import { ApplicantDetailsComponent } from './components/applicant-details/applic
     ShoppingBasketComponent,
     TabsComponent,
     ApplicantDetailsComponent,
+    RuleBuilderComponent,
+    RuleContainerComponent,
+    ActionBarComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,

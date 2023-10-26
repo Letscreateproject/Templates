@@ -16,6 +16,7 @@ import { Dashboard2Component } from './components/dashboard2/dashboard2.componen
 import { ShoppingBasketComponent } from './components/shopping-basket/shopping-basket.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { ApplicantDetailsComponent } from './components/applicant-details/applicant-details.component';
+import { RuleBuilderComponent } from './components/rule-builder/rule-builder.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
       {
         path: 'process',
         component: UploadComponent,
+      },
+      {
+        path: 'rulebuilder',
+        component: RuleBuilderComponent,
       },
       {
         path: 'users',

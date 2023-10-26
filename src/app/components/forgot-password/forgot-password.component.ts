@@ -20,13 +20,18 @@ export class ForgotPasswordComponent implements OnInit {
       ]),
     });
   }
-
+  /**
+   * function used to submit the form
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
       this.router.navigate(['/login']);
     }
   }
+  /**
+   * function used to redirect back to sign in
+   */
   signIn() {
     this.router.navigate(['/login']);
   }

@@ -65,17 +65,18 @@ export class AddApplicantComponent implements OnInit {
       option.toLowerCase().includes(filterValue)
     );
   }
-
+  /**
+   * Used for submiting the form.
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
       this.snackbarService.showSnackbar('Success message', 'success-snack');
     }
   }
-  signIn() {
-    this.router.navigate(['/login']);
-  }
-
+  /**
+   * Used for opening a dialog box. DialogboxComponent is a new component
+   */
   openDialog() {
     const dialogRef = this.dialog.open(DialogboxComponent, {
       width: '700px',

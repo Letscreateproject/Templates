@@ -1,1 +1,1 @@
-# Templates
+This is a template project. Different templates are added and can be reused

@@ -29,7 +29,11 @@ export class LoginComponent implements OnInit {
       ]),
     });
   }
-
+  /**
+   * Used for submitting the login data
+   *
+   * @param {string} value - The value to be used to login.
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
@@ -46,6 +50,10 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+   /**
+   * Used for routing to signup page
+   */
+
   signup() {
     this.router.navigate(['/signup']);
   }

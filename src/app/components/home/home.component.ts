@@ -82,12 +82,20 @@ export class HomeComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
+   /**
+   * Used for showing side-nav-bar 
+   *
+   */
+
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing = true;
     }
   }
-
+ /**
+   * Used for hiding side-nav-bar 
+   *
+   */
   mouseleave() {
     if (!this.isExpanded) {
       this.isShowing = false;

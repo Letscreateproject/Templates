@@ -37,6 +37,7 @@ export interface IColumn {
 })
 export class AuditComponent {
   fieldArray: any[] = [];
+
   columns: IColumn[] = [
     {
       field: 'position',
@@ -59,23 +60,6 @@ export class AuditComponent {
       header: 'Status',
       type: 'action',
     },
-    {
-      field: 'viewIconAction',
-      header: 'View ',
-      type: 'viewIconAction',
-      // hidden:true,
-    },
-    {
-      field: 'downloadIconAction',
-      header: 'Download ',
-      type: 'downloadIconAction',
-      // hidden:true,
-    },
-    {
-      field: 'status',
-      header: '',
-      type: 'status',
-    },
   ];
   displayedColumns = this.columns.map((c) => c.field);
   dataSource = JSON.parse(JSON.stringify(ELEMENT_DATA));
@@ -89,10 +73,11 @@ export class AuditComponent {
   }
   column!: IColumn;
   title = 'angular-material-app';
+  /**
+   * function called when button is clicked from the table
+   * @param {any} e - action event
+   */
   buttonAction(e: any) {
-    // debugger
-    // ELEMENT_DATA.splice(e.i,1);
-    // this.dataSource = JSON.parse( JSON.stringify(ELEMENT_DATA));
     if (e.action == 'Approve') {
       this.takeAction(e.id, true);
     } else if (e.action == 'Reject') {
@@ -120,19 +105,29 @@ export class AuditComponent {
       window.URL.revokeObjectURL(url);
     }
   }
-
+  /**
+   * called from oninit to get the list of documents
+   *
+   */
   getDocList() {
-    this.commonSvc.getDocList().subscribe({
-      next: (data: any) => {
-        this.dataSource = JSON.parse(JSON.stringify(data));
+    this.dataSource = [
+      {
+        position: 1,
+        voucherFileName: 'Voucher1.xlsx',
+        textbox: 'textbox',
+        action: 'action',
+        viewIconAction: 'viewIconAction',
+        downloadIconAction: 'downloadIconAction',
+        status: 'status',
       },
-      error: (e: any) => {
-        //error
-        this.notifer.notify('ERROR', Constants.ERROR_NOTIFIER);
-      },
-    });
+    ];
   }
 
+  /**
+   * function to take action on the buttons
+   * @param {any} id
+   * @param {any} type
+   */
   takeAction(id: any, type: any) {
     const obj = { id, type };
     this.commonSvc.takeAction(obj).subscribe({

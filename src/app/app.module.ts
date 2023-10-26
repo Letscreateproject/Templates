@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './components/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProgressComponent } from './components/progress/progress.component';
-import { DndDirective } from './components/dnd/dnd.directive';
+import { DndDirective } from './_directives/dnd/dnd.directive';
 import { AuditComponent } from './components/audit/audit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppinglistComponent } from './components/shoppinglist/shoppinglist.component';
@@ -77,7 +77,7 @@ import { GroupComponent } from './components/rule-builder/components/group/group
     RuleBuilderComponent,
     RuleContainerComponent,
     ActionBarComponent,
-    GroupComponent
+    GroupComponent,
   ],
   imports: [
     BrowserModule,

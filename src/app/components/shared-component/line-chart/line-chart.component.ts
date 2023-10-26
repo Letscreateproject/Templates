@@ -13,6 +13,9 @@ export class LineChartComponent implements OnInit {
   ngOnInit(): void {
     this.createChart();
   }
+    /**
+   * Used for create a new Chart
+   */
   createChart() {
     this.chart = new Chart('MyChart2', {
       type: 'line', //this denotes tha type of chart

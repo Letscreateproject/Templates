@@ -26,15 +26,21 @@ export class ActionBarComponent implements OnChanges {
       this.ruleArray = this.ruleForm.get('rules') as FormArray;
     }
   }
-
+ /**
+   * Used for adding a new gorup condition to the rule
+   */
   addGroup(): void {
     this.addRow.emit(0);
   }
-
+ /**
+   * Used for adding a new condition 
+   */
   addCondition(): void {
     this.addRow.emit(1);
   }
-
+ /**
+   * Used for remove a condition 
+   */
   removeRow(): void {
     this.deleteRow.emit();
   }

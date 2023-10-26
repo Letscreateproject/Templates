@@ -23,7 +23,12 @@ export class ShoppingBasketComponent implements OnInit {
   ];
 
   basket = ['Applicant 6', 'Applicant 7', 'Applicant 8'];
-
+ /**
+   * Used for dragdrop items to basket
+   *
+   * @param {string} value - The item to be dragdrop.
+   * @returns {Array} list of items.
+   */
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(

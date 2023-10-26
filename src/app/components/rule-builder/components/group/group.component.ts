@@ -174,6 +174,12 @@ export class GroupComponent implements OnInit {
 
     this.lookupValueList = list[0];
   }
+  /**
+   * Used to get the category
+   *
+   * @param {Array} categoryList -List of categories.
+   * @param {any} selected -selected category.
+   */
   getValCate(categoryList: any, selected: any) {
     let catVal = '';
     if (selected == undefined) {
@@ -187,6 +193,12 @@ export class GroupComponent implements OnInit {
       return catVal;
     }
   }
+  /**
+   * Used to get the category
+   *
+   * @param {Array} operatorList -List of operators.
+   * @param {any} selected -selected operator.
+   */
   getValOper(operatorList: any, selected: any) {
     let catVal = '';
     if (selected == undefined) {
@@ -205,6 +217,13 @@ export class GroupComponent implements OnInit {
       return catVal;
     }
   }
+  /**
+   * Used to det the valueTypes
+   *
+   * @param {Array} valueTypes -list of valueTypes.
+   * @param {any} selected -selected value.
+   * 
+   */
   getValTyp(valueTypes: any, selected: any) {
     let catVal = '';
     if (selected == undefined) {
@@ -218,7 +237,12 @@ export class GroupComponent implements OnInit {
       return catVal;
     }
   }
-
+ /**
+   * Used for changing the category
+   *
+   * @param {any} event -selected category.
+   * @param {any} rule -selected rule.
+   */
   changeCategory(event: any, rule: any) {
     const fieldObj: any = this.categoryList.filter(
       (d: any) => event.value == d.fieldName
@@ -229,13 +253,19 @@ export class GroupComponent implements OnInit {
       });
     }
   }
-
+  /**
+   * Used for open the dialogbox
+   *
+   */
   openDialogWithTemplateRef(templateRef: TemplateRef<any>) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.hasBackdrop = false;
     this.dialogRef = this.dialog.open(templateRef, dialogConfig);
   }
-
+ /**
+   * Used for close the dialogbox
+   *
+   */
   close() {
     this.dialogRef.close();
   }

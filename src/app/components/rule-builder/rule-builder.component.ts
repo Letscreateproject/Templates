@@ -26,6 +26,9 @@ export class RuleBuilderComponent {
       rules: this.formBuilder.array([this.createRules()]),
     });
   }
+   /**
+   * Used for initialize  a new form
+   */
   private createRules(): FormGroup {
     return this.formBuilder.group({
       fieldName: ['', Validators.required],

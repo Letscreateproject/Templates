@@ -85,7 +85,12 @@ export class TableListComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
+ /**
+   * Used for filtering 
+   *
+   * @param {string} event - The value to be filtered.
+   * @returns {Array} list of objects.
+   */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -115,8 +120,6 @@ export class TableListComponent implements OnInit, OnChanges {
       row.value = false;
       row.index = true;
     }
-
-    // debugger;
   }
   emitIconAction(row: any, action: string) {
     const data = { ...row, action };

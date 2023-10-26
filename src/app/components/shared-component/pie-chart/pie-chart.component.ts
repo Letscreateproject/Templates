@@ -13,6 +13,9 @@ export class PieChartComponent implements OnInit {
   ngOnInit(): void {
     this.createChart();
   }
+    /**
+   * Used for create a new Chart
+   */
   createChart() {
     const data = {
       labels: ['Red', 'Blue', 'Yellow'],

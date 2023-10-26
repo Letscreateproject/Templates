@@ -21,7 +21,10 @@ export class SignupComponent implements OnInit {
       password: new FormControl('', Validators.required),
     });
   }
-
+/**
+   * Used to signUp as a new  user
+   *
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
@@ -46,6 +49,10 @@ export class SignupComponent implements OnInit {
       }
     }
   }
+  /**
+   * Used for redirecting to login page
+   *
+   */
   signIn() {
     this.router.navigate(['/login']);
   }

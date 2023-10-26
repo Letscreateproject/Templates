@@ -68,7 +68,12 @@ export class UserlistComponent  {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
+ /**
+   * Used for filtering the data
+   *
+   * @param {string} value - The value to be filtered.
+   * @returns {Array} list of objects.
+   */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -77,17 +82,21 @@ export class UserlistComponent  {
       this.dataSource.paginator.firstPage();
     }
   }
+  /**
+   * Used for open dialogbox
+   */
   openDialog(): void {
     const dialogRef = this.dialog.open(UserformComponent, {
-    
-    
     });
-  
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     
     });
   }
+  /**
+   * Used for get list of users
+   * @returns {Array} list of users.
+   */
   getUserList() {
     this.commonsvc.getList().subscribe((result: any) => {
       console.log(result);

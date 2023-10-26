@@ -4,7 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable, map, startWith } from 'rxjs';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
-
+import { CommonSnackbarServiceService } from 'src/app/_services/common-snackbar-service/common-snackbar-service.service';
+/**This component gives the ability to add the applicant*/
 @Component({
   selector: 'app-add-applicant',
   templateUrl: './add-applicant.component.html',
@@ -12,7 +13,11 @@ import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 })
 export class AddApplicantComponent implements OnInit {
   profileForm: any = FormGroup;
-  constructor(private router: Router, public dialog: MatDialog) {}
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    public snackbarService: CommonSnackbarServiceService
+  ) {}
   gender: any = [
     { viewValue: 'Male', value: 'Male' },
     { viewValue: 'Female', value: 'Female' },
@@ -47,7 +52,7 @@ export class AddApplicantComponent implements OnInit {
         map((value: any) => this._filter(value || ''))
       );
   }
-
+  /**this is a test comment @param=value */
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
@@ -59,7 +64,7 @@ export class AddApplicantComponent implements OnInit {
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
-      // success
+      this.snackbarService.showSnackbar('Success message', 'success-snack');
     }
   }
   signIn() {

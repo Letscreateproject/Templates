@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonSnackbarServiceService } from 'src/app/_services/common-snackbar-service/common-snackbar-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   profileForm: any = FormGroup;
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public snackbarService: CommonSnackbarServiceService
+  ) {}
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
@@ -29,7 +33,17 @@ export class LoginComponent implements OnInit {
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
-      this.router.navigate(['/home/dashboard']);
+      if (
+        this.profileForm.controls['username'].value === 'test' &&
+        this.profileForm.controls['password'].value === 'test'
+      ) {
+        this.router.navigate(['/home/dashboard']);
+      } else {
+        this.snackbarService.showSnackbar(
+          'Wrong Username/Password',
+          'error-snack'
+        );
+      }
     }
   }
   signup() {

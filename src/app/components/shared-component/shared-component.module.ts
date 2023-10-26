@@ -18,6 +18,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { CommonCardComponent } from './common-card/common-card.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CustomSnackbarComponent } from './custom-snackbar/custom-snackbar.component';
 @NgModule({
   declarations: [
     TableListComponent,
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LineChartComponent,
     PieChartComponent,
     CommonCardComponent,
+    CustomSnackbarComponent,
   ],
   imports: [
     CommonModule,

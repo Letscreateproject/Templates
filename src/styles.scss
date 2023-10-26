@@ -14,5 +14,24 @@ color: #BAB8B8 !important;
     padding: 10px;
     grid-gap:5px
 }
+.custom-snackbar {
+    // padding: 12px;
+    border-radius: 4px;
+  }
+  
+  .success-snack {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .error-snack {
+    background-color: #f44336; /* Red */
+    color: white;
+  }
+  
+  .info-snack {
+    background-color: #2196F3; /* Blue */
+    color: white;
+  }
 
 

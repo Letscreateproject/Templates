@@ -183,9 +183,6 @@
                                 <a href="#openDialog" >openDialog</a>
                             </li>
                             <li>
-                                <a href="#signIn" >signIn</a>
-                            </li>
-                            <li>
                                 <a href="#submit" >submit</a>
                             </li>
                         </ul>
@@ -420,51 +417,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:80</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signIn"></a>
-                    <span class="name">
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>signIn()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:75</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
+                    <div class="io-description"><p>Used for opening a dialog box. DialogboxComponent is a new component</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -494,14 +456,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:71</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for submiting the form.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -766,17 +730,18 @@ export class AddApplicantComponent implements OnInit {
       option.toLowerCase().includes(filterValue)
     );
   }
-
+  /**
+   * Used for submiting the form.
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
       this.snackbarService.showSnackbar(&#x27;Success message&#x27;, &#x27;success-snack&#x27;);
     }
   }
-  signIn() {
-    this.router.navigate([&#x27;/login&#x27;]);
-  }
-
+  /**
+   * Used for opening a dialog box. DialogboxComponent is a new component
+   */
   openDialog() {
     const dialogRef &#x3D; this.dialog.open(DialogboxComponent, {
       width: &#x27;700px&#x27;,

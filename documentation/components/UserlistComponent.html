@@ -272,14 +272,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/app/components/userlist/userlist.component.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/components/userlist/userlist.component.ts:77</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for filtering the data</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -315,7 +317,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>list of objects.</p>
+
                     </div>
                 </td>
             </tr>
@@ -341,17 +344,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/app/components/userlist/userlist.component.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/components/userlist/userlist.component.ts:100</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for get list of users</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>list of users.</p>
 
                     </div>
                 </td>
@@ -452,14 +463,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/app/components/userlist/userlist.component.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/components/userlist/userlist.component.ts:88</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for open dialogbox</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -705,7 +718,12 @@ export class UserlistComponent  {
     this.dataSource.paginator &#x3D; this.paginator;
     this.dataSource.sort &#x3D; this.sort;
   }
-
+ /**
+   * Used for filtering the data
+   *
+   * @param {string} value - The value to be filtered.
+   * @returns {Array} list of objects.
+   */
   applyFilter(event: Event) {
     const filterValue &#x3D; (event.target as HTMLInputElement).value;
     this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
@@ -714,17 +732,21 @@ export class UserlistComponent  {
       this.dataSource.paginator.firstPage();
     }
   }
+  /**
+   * Used for open dialogbox
+   */
   openDialog(): void {
     const dialogRef &#x3D; this.dialog.open(UserformComponent, {
-    
-    
     });
-  
     dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
       console.log(&#x27;The dialog was closed&#x27;);
     
     });
   }
+  /**
+   * Used for get list of users
+   * @returns {Array} list of users.
+   */
   getUserList() {
     this.commonsvc.getList().subscribe((result: any) &#x3D;&gt; {
       console.log(result);

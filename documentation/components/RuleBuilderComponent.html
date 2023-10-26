@@ -381,14 +381,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/components/rule-builder/rule-builder.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/components/rule-builder/rule-builder.component.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for initialize  a new form</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
@@ -488,6 +490,9 @@ export class RuleBuilderComponent {
       rules: this.formBuilder.array([this.createRules()]),
     });
   }
+   /**
+   * Used for initialize  a new form
+   */
   private createRules(): FormGroup {
     return this.formBuilder.group({
       fieldName: [&#x27;&#x27;, Validators.required],

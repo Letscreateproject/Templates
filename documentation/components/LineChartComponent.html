@@ -215,14 +215,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/components/shared-component/line-chart/line-chart.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/components/shared-component/line-chart/line-chart.component.ts:19</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for create a new Chart</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -323,6 +325,9 @@ export class LineChartComponent implements OnInit {
   ngOnInit(): void {
     this.createChart();
   }
+    /**
+   * Used for create a new Chart
+   */
   createChart() {
     this.chart &#x3D; new Chart(&#x27;MyChart2&#x27;, {
       type: &#x27;line&#x27;, //this denotes tha type of chart

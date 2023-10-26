@@ -216,6 +216,7 @@ export interface IColumn {
 })
 export class AuditComponent {
   fieldArray: any[] &#x3D; [];
+
   columns: IColumn[] &#x3D; [
     {
       field: &#x27;position&#x27;,
@@ -238,23 +239,6 @@ export class AuditComponent {
       header: &#x27;Status&#x27;,
       type: &#x27;action&#x27;,
     },
-    {
-      field: &#x27;viewIconAction&#x27;,
-      header: &#x27;View &#x27;,
-      type: &#x27;viewIconAction&#x27;,
-      // hidden:true,
-    },
-    {
-      field: &#x27;downloadIconAction&#x27;,
-      header: &#x27;Download &#x27;,
-      type: &#x27;downloadIconAction&#x27;,
-      // hidden:true,
-    },
-    {
-      field: &#x27;status&#x27;,
-      header: &#x27;&#x27;,
-      type: &#x27;status&#x27;,
-    },
   ];
   displayedColumns &#x3D; this.columns.map((c) &#x3D;&gt; c.field);
   dataSource &#x3D; JSON.parse(JSON.stringify(ELEMENT_DATA));
@@ -268,10 +252,11 @@ export class AuditComponent {
   }
   column!: IColumn;
   title &#x3D; &#x27;angular-material-app&#x27;;
+  /**
+   * function called when button is clicked from the table
+   * @param {any} e - action event
+   */
   buttonAction(e: any) {
-    // debugger
-    // ELEMENT_DATA.splice(e.i,1);
-    // this.dataSource &#x3D; JSON.parse( JSON.stringify(ELEMENT_DATA));
     if (e.action &#x3D;&#x3D; &#x27;Approve&#x27;) {
       this.takeAction(e.id, true);
     } else if (e.action &#x3D;&#x3D; &#x27;Reject&#x27;) {
@@ -299,19 +284,29 @@ export class AuditComponent {
       window.URL.revokeObjectURL(url);
     }
   }
-
+  /**
+   * called from oninit to get the list of documents
+   *
+   */
   getDocList() {
-    this.commonSvc.getDocList().subscribe({
-      next: (data: any) &#x3D;&gt; {
-        this.dataSource &#x3D; JSON.parse(JSON.stringify(data));
+    this.dataSource &#x3D; [
+      {
+        position: 1,
+        voucherFileName: &#x27;Voucher1.xlsx&#x27;,
+        textbox: &#x27;textbox&#x27;,
+        action: &#x27;action&#x27;,
+        viewIconAction: &#x27;viewIconAction&#x27;,
+        downloadIconAction: &#x27;downloadIconAction&#x27;,
+        status: &#x27;status&#x27;,
       },
-      error: (e: any) &#x3D;&gt; {
-        //error
-        this.notifer.notify(&#x27;ERROR&#x27;, Constants.ERROR_NOTIFIER);
-      },
-    });
+    ];
   }
 
+  /**
+   * function to take action on the buttons
+   * @param {any} id
+   * @param {any} type
+   */
   takeAction(id: any, type: any) {
     const obj &#x3D; { id, type };
     this.commonSvc.takeAction(obj).subscribe({

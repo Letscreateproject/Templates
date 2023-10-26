@@ -683,14 +683,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:94</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for filtering</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -701,6 +703,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -715,6 +718,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>The value to be filtered.</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -726,7 +735,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>list of objects.</p>
+
                     </div>
                 </td>
             </tr>
@@ -752,8 +762,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:124</a></div>
                 </td>
             </tr>
 
@@ -833,8 +843,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="104"
-                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:104</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:109</a></div>
                 </td>
             </tr>
 
@@ -1069,8 +1079,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:105</a></div>
                 </td>
             </tr>
 
@@ -1207,8 +1217,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/components/shared-component/table-list/table-list.component.ts:99</a></div>
                 </td>
             </tr>
 
@@ -1565,7 +1575,12 @@ export class TableListComponent implements OnInit, OnChanges {
     this.dataSource.paginator &#x3D; this.paginator;
     this.dataSource.sort &#x3D; this.sort;
   }
-
+ /**
+   * Used for filtering 
+   *
+   * @param {string} event - The value to be filtered.
+   * @returns {Array} list of objects.
+   */
   applyFilter(event: Event) {
     const filterValue &#x3D; (event.target as HTMLInputElement).value;
     this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
@@ -1595,8 +1610,6 @@ export class TableListComponent implements OnInit, OnChanges {
       row.value &#x3D; false;
       row.index &#x3D; true;
     }
-
-    // debugger;
   }
   emitIconAction(row: any, action: string) {
     const data &#x3D; { ...row, action };

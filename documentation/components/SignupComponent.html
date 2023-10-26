@@ -284,14 +284,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/components/signup/signup.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/components/signup/signup.component.ts:56</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for redirecting to login page</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -321,14 +323,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/components/signup/signup.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/components/signup/signup.component.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used to signUp as a new  user</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -404,7 +408,10 @@ export class SignupComponent implements OnInit {
       password: new FormControl(&#x27;&#x27;, Validators.required),
     });
   }
-
+/**
+   * Used to signUp as a new  user
+   *
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
@@ -429,6 +436,10 @@ export class SignupComponent implements OnInit {
       }
     }
   }
+  /**
+   * Used for redirecting to login page
+   *
+   */
   signIn() {
     this.router.navigate([&#x27;/login&#x27;]);
   }

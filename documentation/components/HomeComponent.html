@@ -235,14 +235,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/components/home/home.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/components/home/home.component.ts:97</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for showing side-nav-bar</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -272,14 +274,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/app/components/home/home.component.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/components/home/home.component.ts:106</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for hiding side-nav-bar</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -350,7 +354,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/components/home/home.component.ts:80</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/components/home/home.component.ts:87</a></div>
                         </td>
                     </tr>
 
@@ -375,7 +379,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/components/home/home.component.ts:82</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/components/home/home.component.ts:89</a></div>
                         </td>
                     </tr>
 
@@ -464,6 +468,13 @@
       menuItemUrl: &#x27;tabs&#x27;,
       menuItemCode: &#x27;tabs&#x27;,
     },
+
+    {
+      menuItemDisplayName: &#x27;Rule Builder&#x27;,
+      menuItemIcon: &#x27;assetsico-1.svg&#x27;,
+      menuItemUrl: &#x27;rulebuilder&#x27;,
+      menuItemCode: &#x27;rulebuilder&#x27;,
+    },
   ]</code>
                     </td>
                 </tr>
@@ -500,7 +511,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/components/home/home.component.ts:81</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/components/home/home.component.ts:88</a></div>
                         </td>
                     </tr>
 
@@ -531,7 +542,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/components/home/home.component.ts:83</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/components/home/home.component.ts:90</a></div>
                         </td>
                     </tr>
 
@@ -566,7 +577,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/components/home/home.component.ts:79</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/components/home/home.component.ts:86</a></div>
                         </td>
                     </tr>
 
@@ -682,6 +693,13 @@ export class HomeComponent implements OnInit {
       menuItemUrl: &#x27;tabs&#x27;,
       menuItemCode: &#x27;tabs&#x27;,
     },
+
+    {
+      menuItemDisplayName: &#x27;Rule Builder&#x27;,
+      menuItemIcon: &#x27;assetsico-1.svg&#x27;,
+      menuItemUrl: &#x27;rulebuilder&#x27;,
+      menuItemCode: &#x27;rulebuilder&#x27;,
+    },
   ];
   @ViewChild(&#x27;sidenav&#x27;) sidenav: MatSidenav | undefined;
   isExpanded &#x3D; true;
@@ -689,12 +707,20 @@ export class HomeComponent implements OnInit {
   isShowing &#x3D; false;
   showSubSubMenu: boolean &#x3D; false;
 
+  /**
+   * Used for showing side-nav-bar
+   *
+   */
+
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing &#x3D; true;
     }
   }
-
+  /**
+   * Used for hiding side-nav-bar
+   *
+   */
   mouseleave() {
     if (!this.isExpanded) {
       this.isShowing &#x3D; false;
@@ -716,7 +742,8 @@ export class HomeComponent implements OnInit {
           &lt;mat-list-item [routerLink]&#x3D;&quot;item.menuItemUrl&quot; routerLinkActive&#x3D;&quot;activebutton&quot; class&#x3D;&quot;parent&quot;
             *ngFor&#x3D;&quot;let item of menuItems&quot;&gt;
             &lt;img src&#x3D;&quot;{{item.menuItemIcon}}&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;img-st&quot; /&gt;
-            &lt;span class&#x3D;&quot;full-width&quot; *ngIf&#x3D;&quot;isExpanded || isShowing&quot;&gt;{{item.menuItemDisplayName}}&lt;/span&gt;
+            &lt;span class&#x3D;&quot;full-width&quot; *ngIf&#x3D;&quot;isExpanded || isShowing&quot;
+              style&#x3D;&quot;font-size: 14px;&quot;&gt;{{item.menuItemDisplayName}}&lt;/span&gt;
           &lt;/mat-list-item&gt;
 
         &lt;/mat-nav-list&gt;
@@ -840,7 +867,7 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-header></app-header><!-- <app-menu></app-menu> --><div class="content">  <mat-sidenav-container class="example-container">    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"      (mouseleave)="mouseleave()">      <div class="sub-side">        <mat-nav-list>          <mat-list-item [routerLink]="item.menuItemUrl" routerLinkActive="activebutton" class="parent"            *ngFor="let item of menuItems">            <img src="{{item.menuItemIcon}}" alt="" class="img-st" />            <span class="full-width" *ngIf="isExpanded || isShowing">{{item.menuItemDisplayName}}</span>          </mat-list-item>        </mat-nav-list>        <mat-nav-list>        </mat-nav-list>      </div>    </mat-sidenav>    <div class="example-sidenav-content">      <router-outlet></router-outlet>    </div>  </mat-sidenav-container></div><app-footer></app-footer></div>'
+        var COMPONENT_TEMPLATE = '<div><app-header></app-header><!-- <app-menu></app-menu> --><div class="content">  <mat-sidenav-container class="example-container">    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"      (mouseleave)="mouseleave()">      <div class="sub-side">        <mat-nav-list>          <mat-list-item [routerLink]="item.menuItemUrl" routerLinkActive="activebutton" class="parent"            *ngFor="let item of menuItems">            <img src="{{item.menuItemIcon}}" alt="" class="img-st" />            <span class="full-width" *ngIf="isExpanded || isShowing"              style="font-size: 14px;">{{item.menuItemDisplayName}}</span>          </mat-list-item>        </mat-nav-list>        <mat-nav-list>        </mat-nav-list>      </div>    </mat-sidenav>    <div class="example-sidenav-content">      <router-outlet></router-outlet>    </div>  </mat-sidenav-container></div><app-footer></app-footer></div>'
     var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'mk-workspace-action-bar'},{'name': 'AddApplicantComponent', 'selector': 'app-add-applicant'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplicantDetailsComponent', 'selector': 'app-applicant-details'},{'name': 'AuditComponent', 'selector': 'app-audit'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CommonCardComponent', 'selector': 'app-common-card'},{'name': 'CommonPageHeaderComponent', 'selector': 'app-common-page-header'},{'name': 'CustomSnackbarComponent', 'selector': 'app-custom-snackbar'},{'name': 'Dashboard2Component', 'selector': 'app-dashboard2'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogboxComponent', 'selector': 'app-dialogbox'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GroupComponent', 'selector': 'mk-workspace-group'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RuleBuilderComponent', 'selector': 'mk-workspace-rule-builder'},{'name': 'RuleContainerComponent', 'selector': 'mk-workspace-rule-container'},{'name': 'ShoppingBasketComponent', 'selector': 'app-shopping-basket'},{'name': 'ShoppinglistComponent', 'selector': 'app-shoppinglist'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableListComponent', 'selector': 'app-table-list'},{'name': 'TabsComponent', 'selector': 'app-tabs'},{'name': 'UploadComponent', 'selector': 'app-upload'},{'name': 'UserformComponent', 'selector': 'app-userform'},{'name': 'UserlistComponent', 'selector': 'app-userlist'}];
     var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'}];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};

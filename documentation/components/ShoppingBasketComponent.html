@@ -217,14 +217,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/components/shopping-basket/shopping-basket.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/components/shopping-basket/shopping-basket.component.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for dragdrop items to basket</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -260,7 +262,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>list of items.</p>
+
                     </div>
                 </td>
             </tr>
@@ -408,7 +411,12 @@ export class ShoppingBasketComponent implements OnInit {
   ];
 
   basket &#x3D; [&#x27;Applicant 6&#x27;, &#x27;Applicant 7&#x27;, &#x27;Applicant 8&#x27;];
-
+ /**
+   * Used for dragdrop items to basket
+   *
+   * @param {string} value - The item to be dragdrop.
+   * @returns {Array} list of items.
+   */
   drop(event: CdkDragDrop&lt;string[]&gt;) {
     if (event.previousContainer &#x3D;&#x3D;&#x3D; event.container) {
       moveItemInArray(

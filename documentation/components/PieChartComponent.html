@@ -215,14 +215,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/components/shared-component/pie-chart/pie-chart.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/components/shared-component/pie-chart/pie-chart.component.ts:19</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for create a new Chart</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -323,6 +325,9 @@ export class PieChartComponent implements OnInit {
   ngOnInit(): void {
     this.createChart();
   }
+    /**
+   * Used for create a new Chart
+   */
   createChart() {
     const data &#x3D; {
       labels: [&#x27;Red&#x27;, &#x27;Blue&#x27;, &#x27;Yellow&#x27;],

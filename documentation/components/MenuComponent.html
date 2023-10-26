@@ -235,14 +235,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/components/menu/menu.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/components/menu/menu.component.ts:61</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for showing Menu Details</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -272,14 +274,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/components/menu/menu.component.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/components/menu/menu.component.ts:71</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for hiding Menu Details</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -309,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/components/menu/menu.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/components/menu/menu.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -634,12 +638,20 @@ export class MenuComponent implements OnInit {
   isShowing &#x3D; false;
   showSubSubMenu: boolean &#x3D; false;
 
+  /**
+   * Used for showing Menu Details
+   *
+   */
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing &#x3D; true;
     }
   }
 
+    /**
+   * Used for hiding Menu Details
+   *
+   */
   mouseleave() {
     if (!this.isExpanded) {
       this.isShowing &#x3D; false;

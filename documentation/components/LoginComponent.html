@@ -266,8 +266,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/components/login/login.component.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/components/login/login.component.ts:60</a></div>
                 </td>
             </tr>
 
@@ -340,14 +340,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/components/login/login.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/components/login/login.component.ts:57</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for routing to signup page</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -377,14 +379,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/components/login/login.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/components/login/login.component.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for submitting the login data</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -495,7 +499,11 @@ export class LoginComponent implements OnInit {
       ]),
     });
   }
-
+  /**
+   * Used for submitting the login data
+   *
+   * @param {string} value - The value to be used to login.
+   */
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
@@ -512,6 +520,10 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+   /**
+   * Used for routing to signup page
+   */
+
   signup() {
     this.router.navigate([&#x27;/signup&#x27;]);
   }

@@ -324,14 +324,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/components/rule-builder/components/action-bar/action-bar.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/components/rule-builder/components/action-bar/action-bar.component.ts:38</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for adding a new condition</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -361,14 +363,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/components/rule-builder/components/action-bar/action-bar.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/components/rule-builder/components/action-bar/action-bar.component.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for adding a new gorup condition to the rule</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -467,14 +471,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/components/rule-builder/components/action-bar/action-bar.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/components/rule-builder/components/action-bar/action-bar.component.ts:44</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Used for remove a condition</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -549,15 +555,21 @@ export class ActionBarComponent implements OnChanges {
       this.ruleArray &#x3D; this.ruleForm.get(&#x27;rules&#x27;) as FormArray;
     }
   }
-
+ /**
+   * Used for adding a new gorup condition to the rule
+   */
   addGroup(): void {
     this.addRow.emit(0);
   }
-
+ /**
+   * Used for adding a new condition 
+   */
   addCondition(): void {
     this.addRow.emit(1);
   }
-
+ /**
+   * Used for remove a condition 
+   */
   removeRow(): void {
     this.deleteRow.emit();
   }
@@ -568,29 +580,17 @@ export class ActionBarComponent implements OnChanges {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;ruleForm&quot;&gt;
   &lt;div class&#x3D;&quot;treeview__level&quot; data-level&#x3D;&quot;&quot;&gt;
-    &lt;span class&#x3D;&quot;level-title&quot;
-      &gt;&lt;div class&#x3D;&quot;can-toggle&quot;&gt;
-        &lt;mat-button-toggle-group
-          name&#x3D;&quot;fontStyle&quot;
-          class&#x3D;&quot;rule-toggle&quot;
-          formControlName&#x3D;&quot;condition&quot;
-          aria-label&#x3D;&quot;Font Style&quot;
-        &gt;
-          &lt;mat-button-toggle value&#x3D;&quot;AND&quot; class&#x3D;&quot;border-radious-left&quot;
-            &gt;AND&lt;/mat-button-toggle
-          &gt;
-          &lt;mat-button-toggle value&#x3D;&quot;OR&quot; class&#x3D;&quot;border-radious-right&quot;
-            &gt;OR&lt;/mat-button-toggle
-          &gt;
+    &lt;span class&#x3D;&quot;level-title&quot;&gt;
+      &lt;div class&#x3D;&quot;can-toggle&quot;&gt;
+        &lt;mat-button-toggle-group name&#x3D;&quot;fontStyle&quot; class&#x3D;&quot;rule-toggle&quot; formControlName&#x3D;&quot;condition&quot;
+          aria-label&#x3D;&quot;Font Style&quot;&gt;
+          &lt;mat-button-toggle value&#x3D;&quot;AND&quot; class&#x3D;&quot;border-radious-left&quot;&gt;AND&lt;/mat-button-toggle&gt;
+          &lt;mat-button-toggle value&#x3D;&quot;OR&quot; class&#x3D;&quot;border-radious-right&quot;&gt;OR&lt;/mat-button-toggle&gt;
         &lt;/mat-button-toggle-group&gt;
-      &lt;/div&gt;&lt;/span
-    &gt;
-    &lt;div
-      class&#x3D;&quot;tree-add-icon&quot;
-      #menuTrigger&#x3D;&quot;matMenuTrigger&quot;
-      [matMenuTriggerFor]&#x3D;&quot;menu1&quot;
-    &gt;
-      &lt;span class&#x3D;&quot;icon-super-admin-pluse&quot;&gt;ADD&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/span&gt;
+    &lt;div class&#x3D;&quot;tree-add-icon&quot; #menuTrigger&#x3D;&quot;matMenuTrigger&quot; [matMenuTriggerFor]&#x3D;&quot;menu1&quot;&gt;
+      &lt;span class&#x3D;&quot;icon-super-admin-pluse&quot;&gt;+&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;tree-add-icon&quot; *ngIf&#x3D;&quot;deleteYn&quot; (click)&#x3D;&quot;removeRow()&quot;&gt;
       &lt;a class&#x3D;&quot;close-input&quot; title&#x3D;&quot;Delete Rule&quot;&gt;
@@ -617,8 +617,7 @@ export class ActionBarComponent implements OnChanges {
       &lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
+&lt;/form&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -666,15 +665,16 @@ export class ActionBarComponent implements OnChanges {
 }
 .icon-super-admin-pluse {
   position: relative;
-  top: 7px;
-  font-size: 13px;
-  left: 4px;
+  // top: 7px;
+  font-size: 25px;
+  // left: 4px;
 }
 .icon-modal-close {
   position: relative;
-  top: 8px;
+  // top: 8px;
   font-size: 15px;
-  left: 12px;
+  cursor: pointer;
+  // left: 12px;
 }
 .tree-add-icon {
   cursor: pointer;
@@ -707,7 +707,7 @@ export class ActionBarComponent implements OnChanges {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="ruleForm">  <div class="treeview__level" data-level="">    <span class="level-title"      ><div class="can-toggle">        <mat-button-toggle-group          name="fontStyle"          class="rule-toggle"          formControlName="condition"          aria-label="Font Style"        >          <mat-button-toggle value="AND" class="border-radious-left"            >AND</mat-button-toggle          >          <mat-button-toggle value="OR" class="border-radious-right"            >OR</mat-button-toggle          >        </mat-button-toggle-group>      </div></span    >    <div      class="tree-add-icon"      #menuTrigger="matMenuTrigger"      [matMenuTriggerFor]="menu1"    >      <span class="icon-super-admin-pluse">ADD</span>    </div>    <div class="tree-add-icon" *ngIf="deleteYn" (click)="removeRow()">      <a class="close-input" title="Delete Rule">        <span class="icon-modal-close">X</span>      </a>    </div>    <mat-menu #menu1="matMenu" class="rule-cal">      <button mat-menu-item (click)="addGroup()">Add Group</button>      <button mat-menu-item (click)="addCondition()">Add Condition</button>    </mat-menu>    <div>      <a (click)="removeRow()" class="close-input" title="Delete Rule">        <div class="query-delete">          <span class="icon-delete"></span>        </div>      </a>    </div>    <div *ngIf="deleteYn">      <a (click)="removeRow()" class="close-input" title="Delete Rule">        <div class="query-delete">          <span class="icon-delete"></span>        </div>      </a>    </div>  </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="ruleForm">  <div class="treeview__level" data-level="">    <span class="level-title">      <div class="can-toggle">        <mat-button-toggle-group name="fontStyle" class="rule-toggle" formControlName="condition"          aria-label="Font Style">          <mat-button-toggle value="AND" class="border-radious-left">AND</mat-button-toggle>          <mat-button-toggle value="OR" class="border-radious-right">OR</mat-button-toggle>        </mat-button-toggle-group>      </div>    </span>    <div class="tree-add-icon" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu1">      <span class="icon-super-admin-pluse">+</span>    </div>    <div class="tree-add-icon" *ngIf="deleteYn" (click)="removeRow()">      <a class="close-input" title="Delete Rule">        <span class="icon-modal-close">X</span>      </a>    </div>    <mat-menu #menu1="matMenu" class="rule-cal">      <button mat-menu-item (click)="addGroup()">Add Group</button>      <button mat-menu-item (click)="addCondition()">Add Condition</button>    </mat-menu>    <div>      <a (click)="removeRow()" class="close-input" title="Delete Rule">        <div class="query-delete">          <span class="icon-delete"></span>        </div>      </a>    </div>    <div *ngIf="deleteYn">      <a (click)="removeRow()" class="close-input" title="Delete Rule">        <div class="query-delete">          <span class="icon-delete"></span>        </div>      </a>    </div>  </div></form></div>'
     var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'mk-workspace-action-bar'},{'name': 'AddApplicantComponent', 'selector': 'app-add-applicant'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplicantDetailsComponent', 'selector': 'app-applicant-details'},{'name': 'AuditComponent', 'selector': 'app-audit'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CommonCardComponent', 'selector': 'app-common-card'},{'name': 'CommonPageHeaderComponent', 'selector': 'app-common-page-header'},{'name': 'CustomSnackbarComponent', 'selector': 'app-custom-snackbar'},{'name': 'Dashboard2Component', 'selector': 'app-dashboard2'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogboxComponent', 'selector': 'app-dialogbox'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GroupComponent', 'selector': 'mk-workspace-group'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RuleBuilderComponent', 'selector': 'mk-workspace-rule-builder'},{'name': 'RuleContainerComponent', 'selector': 'mk-workspace-rule-container'},{'name': 'ShoppingBasketComponent', 'selector': 'app-shopping-basket'},{'name': 'ShoppinglistComponent', 'selector': 'app-shoppinglist'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableListComponent', 'selector': 'app-table-list'},{'name': 'TabsComponent', 'selector': 'app-tabs'},{'name': 'UploadComponent', 'selector': 'app-upload'},{'name': 'UserformComponent', 'selector': 'app-userform'},{'name': 'UserlistComponent', 'selector': 'app-userlist'}];
     var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'}];
     var ACTUAL_COMPONENT = {'name': 'ActionBarComponent'};

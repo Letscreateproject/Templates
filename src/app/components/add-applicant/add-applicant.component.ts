@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, map, startWith } from 'rxjs';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 import { CommonSnackbarServiceService } from 'src/app/_services/common-snackbar-service/common-snackbar-service.service';
-/**This component gives the ability to add the applicant*/
+/**Here in this component we can add an applicant. Required fied ,max and min length validations added*/
 @Component({
   selector: 'app-add-applicant',
   templateUrl: './add-applicant.component.html',
@@ -52,7 +52,12 @@ export class AddApplicantComponent implements OnInit {
         map((value: any) => this._filter(value || ''))
       );
   }
-  /**this is a test comment @param=value */
+  /**
+   * Used for filtering the autocomplete
+   *
+   * @param {string} value - The value to be filtered.
+   * @returns {Array} list of objects.
+   */
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 

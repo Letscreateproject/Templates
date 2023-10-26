@@ -72,7 +72,7 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>This component gives the ability to add the applicant</p>
+        <p>Here in this component we can add an applicant. Required fied ,max and min length validations added</p>
 
     </p>
 
@@ -304,15 +304,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:61</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>this is a test comment @param=value</p>
+                    <div class="io-description"><p>Used for filtering the autocomplete</p>
 </div>
 
                     <div class="io-description">
@@ -324,6 +324,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -338,6 +339,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>The value to be filtered.</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -349,7 +356,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>list of objects.</p>
+
                     </div>
                 </td>
             </tr>
@@ -412,8 +420,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:79</a></div>
                 </td>
             </tr>
 
@@ -449,8 +457,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:75</a></div>
                 </td>
             </tr>
 
@@ -486,8 +494,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/components/add-applicant/add-applicant.component.ts:69</a></div>
                 </td>
             </tr>
 
@@ -698,7 +706,7 @@ import { Router } from &#x27;@angular/router&#x27;;
 import { Observable, map, startWith } from &#x27;rxjs&#x27;;
 import { DialogboxComponent } from &#x27;../dialogbox/dialogbox.component&#x27;;
 import { CommonSnackbarServiceService } from &#x27;src/app/_services/common-snackbar-service/common-snackbar-service.service&#x27;;
-/**This component gives the ability to add the applicant*/
+/**Here in this component we can add an applicant. Required fied ,max and min length validations added*/
 @Component({
   selector: &#x27;app-add-applicant&#x27;,
   templateUrl: &#x27;./add-applicant.component.html&#x27;,
@@ -745,7 +753,12 @@ export class AddApplicantComponent implements OnInit {
         map((value: any) &#x3D;&gt; this._filter(value || &#x27;&#x27;))
       );
   }
-  /**this is a test comment @param&#x3D;value */
+  /**
+   * Used for filtering the autocomplete
+   *
+   * @param {string} value - The value to be filtered.
+   * @returns {Array} list of objects.
+   */
   private _filter(value: string): string[] {
     const filterValue &#x3D; value.toLowerCase();
 
@@ -1074,7 +1087,7 @@ export class AddApplicantComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-common-page-header [header]="\'Add Applicant\'"></app-common-page-header><mat-card class="example-card signup-page ">    <form [formGroup]="profileForm" (ngSubmit)="submit()">        <mat-card-content>            <div class="grid-class">                <mat-form-field appearance="outline">                    <mat-label>First Name</mat-label>                    <input matInput placeholder="First Name" type="text" formControlName="firstName">                    <mat-error *ngIf="profileForm.get(\'firstName\').errors?.[\'required\']">                        This field is required                    </mat-error>                    <mat-error *ngIf="profileForm.get(\'firstName\').errors?.[\'maxlength\']">                        Only 10 charecters allowed                    </mat-error>                    <mat-error *ngIf="profileForm.get(\'firstName\').errors?.[\'minlength\']">                        Min 3 needed.                    </mat-error>                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Last Name</mat-label>                    <input matInput placeholder="Last Name" type="text" formControlName="lastName">                    <mat-error *ngIf="profileForm.get(\'lastName\').errors?.[\'required\']">                        This field is required                    </mat-error> <mat-error *ngIf="profileForm.get(\'lastName\').errors?.[\'maxlength\']">                        Only 10 charecters allowed                    </mat-error>                    <mat-error *ngIf="profileForm.get(\'lastName\').errors?.[\'minlength\']">                        Min 3 needed.                    </mat-error>                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Date Of Birth</mat-label>                    <input matInput placeholder="Date Of Birth" type="date" formControlName="dob">                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Gender</mat-label>                    <mat-select formControlName="gender">                        <mat-option *ngFor="let food of gender" [value]="food.value">                            {{food.viewValue}}                        </mat-option>                    </mat-select>                    <mat-error *ngIf="profileForm.get(\'gender\').errors?.[\'required\']">                        This field is required                    </mat-error>                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Email</mat-label>                    <input matInput placeholder="Email" type="email" formControlName="email">                    <mat-error *ngIf="profileForm.get(\'email\').errors?.[\'required\']">                        This field is required                    </mat-error>                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Phone</mat-label>                    <input matInput placeholder="Phone" type="text" formControlName="phone">                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Autocomplete</mat-label>                    <input type="text" placeholder="Pick one" matInput formControlName="autocomplete"                        [matAutocomplete]="auto">                    <mat-autocomplete #auto="matAutocomplete">                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">                            {{option}}                        </mat-option>                    </mat-autocomplete>                    <mat-error *ngIf="profileForm.get(\'autocomplete\').errors?.[\'required\']">                        This field is required                    </mat-error>                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Phone</mat-label>                    <input matInput placeholder="Phone" type="text" formControlName="phone">                </mat-form-field>                <mat-form-field appearance="outline" class="no-resize-handle">                    <mat-label>Address 1</mat-label>                    <textarea matInput placeholder="Address 1" formControlName="address1"></textarea>                    <mat-error *ngIf="profileForm.get(\'address1\').errors?.[\'required\']">                        This field is required                    </mat-error>                    <mat-error *ngIf="profileForm.get(\'address1\').errors?.[\'maxlength\']">                        Only 100 charecters allowed                    </mat-error>                    <mat-error *ngIf="profileForm.get(\'address1\').errors?.[\'minlength\']">                        Min 3 needed.                    </mat-error>                </mat-form-field>                <mat-form-field appearance="outline" class="no-resize-handle">                    <mat-label>Address 2</mat-label>                    <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>                    <mat-error *ngIf="profileForm.get(\'address2\').errors?.[\'maxlength\']">                        Only 100 charecters allowed                    </mat-error>                </mat-form-field>                <div fxLayout="column">                    <mat-label>MFA Enabled</mat-label>                    <mat-checkbox matInput class="example-margin" formControlName="mfaEnabed">                    </mat-checkbox>                </div>                <div class="example-button-row">                    <button mat-raised-button color="primary" type="button" class="log-colour"                        (click)="openDialog()">Dialog                        Box</button>                </div>            </div>        </mat-card-content>        <mat-card-actions>            <div class="grid-class">                <!-- <div fxLayout="row" fxLayoutAlign="space-between center" class="button-act"> -->                <button mat-raised-button color="primary" type="submit" class="log-btn">SAVE</button>            </div>        </mat-card-actions>    </form></mat-card></div>'
-    var COMPONENTS = [{'name': 'AddApplicantComponent', 'selector': 'app-add-applicant'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplicantDetailsComponent', 'selector': 'app-applicant-details'},{'name': 'AuditComponent', 'selector': 'app-audit'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CommonCardComponent', 'selector': 'app-common-card'},{'name': 'CommonPageHeaderComponent', 'selector': 'app-common-page-header'},{'name': 'CustomSnackbarComponent', 'selector': 'app-custom-snackbar'},{'name': 'Dashboard2Component', 'selector': 'app-dashboard2'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogboxComponent', 'selector': 'app-dialogbox'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'ShoppingBasketComponent', 'selector': 'app-shopping-basket'},{'name': 'ShoppinglistComponent', 'selector': 'app-shoppinglist'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableListComponent', 'selector': 'app-table-list'},{'name': 'TabsComponent', 'selector': 'app-tabs'},{'name': 'UploadComponent', 'selector': 'app-upload'},{'name': 'UserformComponent', 'selector': 'app-userform'},{'name': 'UserlistComponent', 'selector': 'app-userlist'}];
+    var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'mk-workspace-action-bar'},{'name': 'AddApplicantComponent', 'selector': 'app-add-applicant'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplicantDetailsComponent', 'selector': 'app-applicant-details'},{'name': 'AuditComponent', 'selector': 'app-audit'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CommonCardComponent', 'selector': 'app-common-card'},{'name': 'CommonPageHeaderComponent', 'selector': 'app-common-page-header'},{'name': 'CustomSnackbarComponent', 'selector': 'app-custom-snackbar'},{'name': 'Dashboard2Component', 'selector': 'app-dashboard2'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogboxComponent', 'selector': 'app-dialogbox'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GroupComponent', 'selector': 'mk-workspace-group'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RuleBuilderComponent', 'selector': 'mk-workspace-rule-builder'},{'name': 'RuleContainerComponent', 'selector': 'mk-workspace-rule-container'},{'name': 'ShoppingBasketComponent', 'selector': 'app-shopping-basket'},{'name': 'ShoppinglistComponent', 'selector': 'app-shoppinglist'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableListComponent', 'selector': 'app-table-list'},{'name': 'TabsComponent', 'selector': 'app-tabs'},{'name': 'UploadComponent', 'selector': 'app-upload'},{'name': 'UserformComponent', 'selector': 'app-userform'},{'name': 'UserlistComponent', 'selector': 'app-userlist'}];
     var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'}];
     var ACTUAL_COMPONENT = {'name': 'AddApplicantComponent'};
 </script>

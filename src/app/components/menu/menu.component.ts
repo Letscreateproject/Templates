@@ -54,12 +54,20 @@ export class MenuComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
+  /**
+   * Used for showing Menu Details
+   *
+   */
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing = true;
     }
   }
 
+    /**
+   * Used for hiding Menu Details
+   *
+   */
   mouseleave() {
     if (!this.isExpanded) {
       this.isShowing = false;

@@ -174,13 +174,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SharedComponentModule.html" data-type="entity-link" >SharedComponentModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SharedComponentModule-845387c48c1b7638214e0f9011749de2f82c8d9138a03250ae96ebd3f716ae36adc5138b17b5218912f73cb02a5681c19b06cd375928a47258a6475bcc5a1993"' : 'data-target="#xs-components-links-module-SharedComponentModule-845387c48c1b7638214e0f9011749de2f82c8d9138a03250ae96ebd3f716ae36adc5138b17b5218912f73cb02a5681c19b06cd375928a47258a6475bcc5a1993"' }>
+                                            'data-target="#components-links-module-SharedComponentModule-13ad96e7d02d776dd0a31c13d07ee0053034b2eac20f8192f2a7a193b718ab7fd87be2808a221e92f1f08134f935a04f3c8a1d98998eb34fe2d724afe3a7f89c"' : 'data-target="#xs-components-links-module-SharedComponentModule-13ad96e7d02d776dd0a31c13d07ee0053034b2eac20f8192f2a7a193b718ab7fd87be2808a221e92f1f08134f935a04f3c8a1d98998eb34fe2d724afe3a7f89c"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedComponentModule-845387c48c1b7638214e0f9011749de2f82c8d9138a03250ae96ebd3f716ae36adc5138b17b5218912f73cb02a5681c19b06cd375928a47258a6475bcc5a1993"' :
-                                            'id="xs-components-links-module-SharedComponentModule-845387c48c1b7638214e0f9011749de2f82c8d9138a03250ae96ebd3f716ae36adc5138b17b5218912f73cb02a5681c19b06cd375928a47258a6475bcc5a1993"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedComponentModule-13ad96e7d02d776dd0a31c13d07ee0053034b2eac20f8192f2a7a193b718ab7fd87be2808a221e92f1f08134f935a04f3c8a1d98998eb34fe2d724afe3a7f89c"' :
+                                            'id="xs-components-links-module-SharedComponentModule-13ad96e7d02d776dd0a31c13d07ee0053034b2eac20f8192f2a7a193b718ab7fd87be2808a221e92f1f08134f935a04f3c8a1d98998eb34fe2d724afe3a7f89c"' }>
                                             <li class="link">
                                                 <a href="components/BarChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BarChartComponent</a>
                                             </li>

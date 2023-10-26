@@ -21,12 +21,24 @@ export class ForgotPasswordComponent implements OnInit {
     });
   }
 
+   /**
+   * Used for reset password
+   *
+   * @param {string}  - No parameter passed
+   * @returns {Array} - no return objects.
+   */
+
   submit() {
     console.log(this.profileForm.value);
     if (this.profileForm.valid) {
       this.router.navigate(['/login']);
     }
   }
+
+   /**
+   * Used for submit the sign in data
+   *
+   */
   signIn() {
     this.router.navigate(['/login']);
   }

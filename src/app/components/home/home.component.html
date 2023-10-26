@@ -9,7 +9,8 @@
           <mat-list-item [routerLink]="item.menuItemUrl" routerLinkActive="activebutton" class="parent"
             *ngFor="let item of menuItems">
             <img src="{{item.menuItemIcon}}" alt="" class="img-st" />
-            <span class="full-width" *ngIf="isExpanded || isShowing">{{item.menuItemDisplayName}}</span>
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              style="font-size: 14px;">{{item.menuItemDisplayName}}</span>
           </mat-list-item>
 
         </mat-nav-list>

@@ -33,7 +33,7 @@ export class GroupComponent implements OnInit {
   queryCondition = 'AND';
   ruleArray!: FormArray;
   valueList: any[] = [];
-  valueTypes = ['TEXT', 'DATE', 'LOOKUP'];
+  valueTypes = ['TEXT', 'DATE'];
   lookupValueList: any[] = [];
   selectedLookupValue: any;
   lookupValueListArray: any[] = [];

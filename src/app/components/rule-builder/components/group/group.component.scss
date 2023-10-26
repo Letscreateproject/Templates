@@ -7,11 +7,17 @@
   color: #fff;
   background: rgba(0, 0, 0, 0.1);
 }
-.mat-option.mat-active {
-  color: #fff !important;
-  background: #fff !important;
+// .mat-option.mat-active {
+//   color: #fff !important;
+//   background: #fff !important;
+// }
+::ng-deep   .mat-option-text {
+  font-size: 12px;
 }
-
+::ng-deep   .mat-select-min-line
+{
+  font-size: 12px;
+}
 ::ng-deep .val .mat-form-field-appearance-standard.mat-form-field {
   margin-bottom: -1.25em !important;
   width: 100%;
@@ -36,7 +42,11 @@
 }
 
 :host .form-group.dropdown-dev mat-form-field {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
+}
+::ng-deep .mat-form-field-wrapper{
+  margin: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 :host ::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
@@ -78,9 +88,10 @@
     display: block;
     float: left;
     width: 100%;
-    height: 100%;
-    font-size: 18px;
-    padding-left: 15px;
+    // height: 100%;
+    font-size: 12px;
+    padding-left: 15px;  
+      margin-top: 2px;
   }
   .lookup-dots-box {
     width: 10% !important;
@@ -123,3 +134,18 @@
   margin-top: -5px;
   margin-right: 5px;
 }
+.icon-modal-close{
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.tree-serch-row-1 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 6px 0 6px 0;}
+  .mandatory-txt  {
+    text-align: left;
+    font-size: 10px;
+    color: red!important;
+    // margin-top: 12px;
+    font-weight: 400;
+    margin-left: 1px;
+  }

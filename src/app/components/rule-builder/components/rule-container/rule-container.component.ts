@@ -1,8 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+  TemplateRef,
+} from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Criteria, RuleOutputObj } from '../../rule-op-obj.js';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonSnackbarServiceService } from 'src/app/_services/common-snackbar-service/common-snackbar-service.service';
 
 @Component({
   selector: 'mk-workspace-rule-container',
@@ -16,6 +26,7 @@ export class RuleContainerComponent implements OnInit {
   @Input() wizardSteps: any[] = [];
   @Input() ruleJson: any;
   @Input() lookupList: any[] = [];
+  @ViewChild('callAPIDialog') callAPIDialog!: TemplateRef<any>;
   isSubmitted: boolean = false;
   ruleForm!: FormGroup;
   ruleObject: any = {};
@@ -38,7 +49,7 @@ export class RuleContainerComponent implements OnInit {
     { key: 'DATE_GT', value: 'DATE GREATER THAN', type: ['DATE'] },
     { key: 'DATE_LT', value: 'DATE LESS THAN', type: ['DATE'] },
     { key: 'DATE_EQUAL', value: 'DATE EQUAL', type: ['DATE'] },
-    { key: 'MVEL', value: 'MVEL', type: ['STRING'] },
+    // { key: 'MVEL', value: 'MVEL', type: ['STRING'] },
   ];
 
   criteriaObj: Criteria = {
@@ -77,7 +88,11 @@ export class RuleContainerComponent implements OnInit {
   };
   wizardStepsObj: any = { nodeTrueCond: '', nodeFalseCond: '' };
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog,
+    public snackbarService: CommonSnackbarServiceService
+  ) {}
   ngOnInit(): void {
     this.ruleForm = this.createGroup();
     this.ruleArray = this.ruleForm.get('rules') as FormArray;
@@ -152,98 +167,17 @@ export class RuleContainerComponent implements OnInit {
     });
   }
   onGenerateRule() {
+    this.isSubmitted = true;
     if (this.ruleForm.valid) {
-      this.opObj = {
-        ruleName: '',
-        ruleDescription: '',
-        ruleJson: {
-          logicalOperators: [''],
-          expressionObjects: [
-            {
-              fieldName: '',
-              operator: '',
-              fieldValue: '',
-              fieldType: 'STRING',
-              fieldDataTypeUI: 'TEXT',
-              fieldLookupCodeUI: '',
-            },
-          ],
-          conditions: [this.criteriaObj],
-        },
-      };
+      this.isSubmitted = false;
       const sampleJson = this.ruleForm.getRawValue();
-      if (this.opObj.ruleJson?.logicalOperators?.length === 1) {
-        this.opObj.ruleJson.logicalOperators[0] = sampleJson.condition;
-      } else {
-        this.opObj.ruleJson?.logicalOperators?.push(sampleJson.condition);
-      }
-      sampleJson.rules.forEach((element: any) => {
-        this.returnRecursive(element, this.opObj.ruleJson);
-      });
 
+      console.log(sampleJson);
       this.ruleForm.reset();
-      this.saveRule.emit({
-        ruleJson: this.opObj,
-        wizardObj: this.wizardStepsObj,
-      });
+      this.snackbarService.showSnackbar('Success message', 'success-snack');
     }
-    return this.opObj;
   }
-  returnRecursive(element: any, criteria: any) {
-    if (element['condition']) {
-      this.criteriaObj = {
-        criteria: {
-          logicalOperators: [''],
-          expressionObjects: [
-            {
-              fieldName: '',
-              operator: '',
-              fieldValue: '',
-              fieldType: 'STRING',
-              fieldDataTypeUI: 'TEXT',
-              fieldLookupCodeUI: '',
-            },
-          ],
-        },
-      };
-      if (this.criteriaObj.criteria?.logicalOperators?.length === 1) {
-        this.criteriaObj.criteria.logicalOperators[0] = element.condition;
-      } else {
-        this.criteriaObj.criteria?.logicalOperators?.push(element.condition);
-      }
-      if (criteria['conditions']) {
-        criteria.conditions[0] = this.criteriaObj;
-      } else {
-        criteria['conditions'] = [];
-        criteria.conditions[0] = this.criteriaObj;
-      }
-
-      element.rules.forEach((element2: any) => {
-        this.returnRecursive(element2, criteria?.conditions[0].criteria);
-      });
-    } else {
-      if (
-        criteria?.expressionObjects.length === 1 &&
-        criteria?.expressionObjects[0].fieldName === ''
-      ) {
-        criteria.expressionObjects[0].fieldName =
-          element.fieldDataTypeUI == 'LOOKUP'
-            ? element.fieldName + 'key'
-            : element.fieldName;
-        criteria.expressionObjects[0].fieldType = element.fieldType;
-        criteria.expressionObjects[0].fieldValue = element.fieldValue;
-        criteria.expressionObjects[0].operator = element.operator;
-        criteria.expressionObjects[0].fieldDataTypeUI = element.fieldDataTypeUI;
-        criteria.expressionObjects[0].fieldLookupCodeUI =
-          element.fieldLookupCodeUI;
-      } else {
-        element.fieldName =
-          element.fieldDataTypeUI == 'LOOKUP'
-            ? element.fieldName + 'key'
-            : element.fieldName;
-        criteria?.expressionObjects?.push(element);
-      }
-    }
-    return criteria;
+  show() {
+    let dialogRef = this.dialog.open(this.callAPIDialog);
   }
 }

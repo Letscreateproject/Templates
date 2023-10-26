@@ -1,28 +1,16 @@
 <form [formGroup]="ruleForm">
   <div class="treeview__level" data-level="">
-    <span class="level-title"
-      ><div class="can-toggle">
-        <mat-button-toggle-group
-          name="fontStyle"
-          class="rule-toggle"
-          formControlName="condition"
-          aria-label="Font Style"
-        >
-          <mat-button-toggle value="AND" class="border-radious-left"
-            >AND</mat-button-toggle
-          >
-          <mat-button-toggle value="OR" class="border-radious-right"
-            >OR</mat-button-toggle
-          >
+    <span class="level-title">
+      <div class="can-toggle">
+        <mat-button-toggle-group name="fontStyle" class="rule-toggle" formControlName="condition"
+          aria-label="Font Style">
+          <mat-button-toggle value="AND" class="border-radious-left">AND</mat-button-toggle>
+          <mat-button-toggle value="OR" class="border-radious-right">OR</mat-button-toggle>
         </mat-button-toggle-group>
-      </div></span
-    >
-    <div
-      class="tree-add-icon"
-      #menuTrigger="matMenuTrigger"
-      [matMenuTriggerFor]="menu1"
-    >
-      <span class="icon-super-admin-pluse">ADD</span>
+      </div>
+    </span>
+    <div class="tree-add-icon" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu1">
+      <span class="icon-super-admin-pluse">+</span>
     </div>
     <div class="tree-add-icon" *ngIf="deleteYn" (click)="removeRow()">
       <a class="close-input" title="Delete Rule">

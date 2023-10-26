@@ -75,6 +75,13 @@ export class HomeComponent implements OnInit {
       menuItemUrl: 'tabs',
       menuItemCode: 'tabs',
     },
+
+    {
+      menuItemDisplayName: 'Rule Builder',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'rulebuilder',
+      menuItemCode: 'rulebuilder',
+    },
   ];
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = true;
@@ -82,8 +89,8 @@ export class HomeComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
-   /**
-   * Used for showing side-nav-bar 
+  /**
+   * Used for showing side-nav-bar
    *
    */
 
@@ -92,8 +99,8 @@ export class HomeComponent implements OnInit {
       this.isShowing = true;
     }
   }
- /**
-   * Used for hiding side-nav-bar 
+  /**
+   * Used for hiding side-nav-bar
    *
    */
   mouseleave() {

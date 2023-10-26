@@ -46,6 +46,7 @@ import { RuleBuilderComponent } from './components/rule-builder/rule-builder.com
 import { RuleContainerComponent } from './components/rule-builder/components/rule-container/rule-container.component';
 import { ActionBarComponent } from './components/rule-builder/components/action-bar/action-bar.component';
 import { GroupComponent } from './components/rule-builder/components/group/group.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
@@ -78,6 +79,7 @@ import { GroupComponent } from './components/rule-builder/components/group/group
     RuleContainerComponent,
     ActionBarComponent,
     GroupComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,

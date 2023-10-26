@@ -4,18 +4,25 @@
         <div fxLayout="row" fxLayoutAlign="space-between center" class="header-cont">
             <div fxLayout="row" fxLayoutAlign="flex-start center"><img src="assets\logo.png" alt=""
                     style="width: 60px;" />
-                <!-- <button mat-icon-button
-            (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button> -->
+
 
             </div>
-            <button mat-icon-button color="primary" [matMenuTriggerFor]="menu" style="width: 80px;
-      color: #333;border-radius: 5%;">
-                <div style="display:flex;text-transform:capitalize ;">
-                    <div> <img src="assets\user-name.svg" alt="" /></div>
-                    <div>{{value}}</div>
-                </div>
 
-            </button>
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="25px">
+                <div style="    padding-top: 15px;"> <app-notification></app-notification></div>
+
+
+
+                <button mat-icon-button color="primary" [matMenuTriggerFor]="menu" style="width: 80px;
+                  color: #333;border-radius: 5%;">
+                    <div style="display:flex;text-transform:capitalize ;">
+                        <div> <img src="assets\user-name.svg" alt="" /></div>
+                        <div>{{value}}</div>
+                    </div>
+
+                </button>
+            </div>
+
 
             <mat-menu #menu="matMenu">
                 <button mat-menu-item routerLink="applicantdetails"> <mat-icon>person</mat-icon>
@@ -23,6 +30,8 @@
                 <button mat-menu-item routerLink="/login"> <mat-icon>logout</mat-icon>
                     <span>Logout</span></button>
             </mat-menu>
+
+
         </div>
 
 

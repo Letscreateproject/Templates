@@ -10,10 +10,14 @@ export class BarChartComponent implements OnInit {
   constructor() {}
 
   public chart: any;
-  ngOnInit(): void {
-    this.createChart();
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.createChart();
+    }, 500);
   }
-   /**
+
+  /**
    * Used for create a new Chart
    */
   createChart() {

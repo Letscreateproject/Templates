@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
   notificationList: any = [];
+  notificationCount: number = 0;
   constructor() {}
 
   ngOnInit(): void {
@@ -82,6 +83,7 @@ export class NotificationComponent implements OnInit {
         isRead: true,
       },
     ];
+    this.notificationCount = this.notificationList.length;
   }
   /**
    * this function will delete the notification
@@ -92,7 +94,26 @@ export class NotificationComponent implements OnInit {
     const index: number = this.notificationList.indexOf(notification);
     if (index !== -1) {
       this.notificationList.splice(index, 1);
+      this.setNotificationCount();
     }
     //this will delete the notification
+  }
+  /**
+   * this function will delete all the notifications
+   * @param none - the notification object
+   * @returns void
+   */
+  deleteAll() {
+    //write fuction to delete all the notifiacation
+    this.notificationList = [];
+    this.setNotificationCount();
+  }
+  /**
+   * this function will set the notification count when there is a change
+   * @param none
+   * @returns void
+   */
+  setNotificationCount() {
+    this.notificationCount = this.notificationList.length;
   }
 }

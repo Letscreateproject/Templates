@@ -11,23 +11,33 @@ export class PieChartComponent implements OnInit {
 
   public chart: any;
   ngOnInit(): void {
-    this.createChart();
+    // this.createChart();
   }
-    /**
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.createChart();
+    }, 500);
+  }
+  /**
    * Used for create a new Chart
    */
   createChart() {
     const data = {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: [
+        '2022-05-10',
+        '2022-05-11',
+        '2022-05-12',
+        '2022-05-13',
+        '2022-05-14',
+        '2022-05-15',
+        '2022-05-16',
+        '2022-05-17',
+      ],
       datasets: [
         {
           label: 'My First Dataset',
-          data: [300, 50, 100],
-          backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-          ],
+          data: [300, 50, 100, 30, 500, 10],
+
           hoverOffset: 4,
         },
       ],
@@ -38,7 +48,8 @@ export class PieChartComponent implements OnInit {
 
       data: data,
       options: {
-        aspectRatio: 1.5,
+        aspectRatio: 3,
+        cutout: 50,
       },
     });
   }

@@ -1,4 +1,4 @@
-<mat-icon matBadge="15" matBadgeColor="warn" style="cursor: pointer;"
+<mat-icon matBadge="{{notificationCount}}" matBadgeColor="warn" style="cursor: pointer;"
     [matMenuTriggerFor]="notification">notifications_none</mat-icon>
 
 
@@ -7,7 +7,7 @@
 
     <div (click)="$event.stopPropagation();" class="notification">
         <div fxLayout="row" fxLayoutAlign="space-between center">
-            <h4>Notifications</h4> <a href="javascript:;" class="deleteall">Delete All</a>
+            <h4>Notifications</h4> <a href="javascript:;" class="deleteall" (click)="deleteAll()">Delete All</a>
         </div>
         <mat-divider></mat-divider>
         <mat-accordion class="example-headers-align" [multi]="false">

@@ -47,6 +47,7 @@ import { RuleContainerComponent } from './components/rule-builder/components/rul
 import { ActionBarComponent } from './components/rule-builder/components/action-bar/action-bar.component';
 import { GroupComponent } from './components/rule-builder/components/group/group.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { GlobalSearchComponent } from './components/global-search/global-search.component';
 
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
@@ -80,6 +81,7 @@ import { NotificationComponent } from './components/notification/notification.co
     ActionBarComponent,
     GroupComponent,
     NotificationComponent,
+    GlobalSearchComponent,
   ],
   imports: [
     BrowserModule,

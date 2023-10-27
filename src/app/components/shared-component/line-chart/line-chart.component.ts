@@ -11,9 +11,14 @@ export class LineChartComponent implements OnInit {
 
   public chart: any;
   ngOnInit(): void {
-    this.createChart();
+    // this.createChart();
   }
-    /**
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.createChart();
+    }, 500);
+  }
+  /**
    * Used for create a new Chart
    */
   createChart() {

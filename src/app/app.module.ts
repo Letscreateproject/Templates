@@ -48,6 +48,7 @@ import { ActionBarComponent } from './components/rule-builder/components/action-
 import { GroupComponent } from './components/rule-builder/components/group/group.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { GlobalSearchComponent } from './components/global-search/global-search.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
@@ -82,6 +83,7 @@ import { GlobalSearchComponent } from './components/global-search/global-search.
     GroupComponent,
     NotificationComponent,
     GlobalSearchComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

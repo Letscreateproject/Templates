@@ -24,14 +24,12 @@ export class PieChartComponent implements OnInit {
   createChart() {
     const data = {
       labels: [
-        '2022-05-10',
-        '2022-05-11',
-        '2022-05-12',
-        '2022-05-13',
-        '2022-05-14',
-        '2022-05-15',
-        '2022-05-16',
-        '2022-05-17',
+        'Scheduled',
+        'Cancelled',
+        'Rescheduled',
+        'Expediated',
+        'Cloned',
+        'Suspended',
       ],
       datasets: [
         {
@@ -48,8 +46,8 @@ export class PieChartComponent implements OnInit {
 
       data: data,
       options: {
-        aspectRatio: 3,
-        cutout: 50,
+        aspectRatio: 1,
+        cutout: 150,
       },
     });
   }

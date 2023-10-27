@@ -19,6 +19,7 @@ import { CommonCardComponent } from './common-card/common-card.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomSnackbarComponent } from './custom-snackbar/custom-snackbar.component';
+import { RadarChartComponent } from './radar-chart/radar-chart.component';
 @NgModule({
   declarations: [
     TableListComponent,
@@ -28,6 +29,7 @@ import { CustomSnackbarComponent } from './custom-snackbar/custom-snackbar.compo
     PieChartComponent,
     CommonCardComponent,
     CustomSnackbarComponent,
+    RadarChartComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +54,7 @@ import { CustomSnackbarComponent } from './custom-snackbar/custom-snackbar.compo
     PieChartComponent,
     LineChartComponent,
     CommonCardComponent,
+    RadarChartComponent,
   ],
 })
 export class SharedComponentModule {}

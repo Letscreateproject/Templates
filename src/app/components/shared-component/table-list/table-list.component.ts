@@ -15,6 +15,21 @@ import { CommonService } from 'src/app/_services/common/common.service';
 import { Constants } from 'src/app/_services/constants';
 import { NotifierService } from 'src/app/_services/notifier/notifier.service';
 
+/**
+ *  Used to grt the list of data which we want to show in the table.
+ * " data" is an array of datas to be displayed on the table, it can have any data.
+ * "columns" it contains an array data for the table columns
+ * "isPageable" is a boolean input value which is used to enable or diable pagination for the table.
+ * "isSortable" is a boolean input value which is used to enable or disable sort functionality for the table data.
+ * "isFilterable" is a boolean input value which is used to enable or disable filter option for the table data.
+ * "rowActionIcon" is an input string array which different actions like edit, delete etc which is useful for the table and we can add it the table as a different column based on our needs.
+ * "paginationSizes" is an input value which contains the page size
+ * "order" is an input value based on which we difines the orintation of the screen
+ * "sortevent" is an output event which is trigered for serverside sorting.
+ * "pageevent" is an output event which is trigered for serverside pagination
+ * "rowAction" is an output event which is trigered  each time when any action occures.
+ * 
+ */
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',

@@ -82,6 +82,12 @@ export class HomeComponent implements OnInit {
       menuItemUrl: 'rulebuilder',
       menuItemCode: 'rulebuilder',
     },
+    {
+      menuItemDisplayName: 'Rich Textarea',
+      menuItemIcon: 'assetsico-1.svg',
+      menuItemUrl: 'richTextArea',
+      menuItemCode: 'richTextArea',
+    },
   ];
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = true;

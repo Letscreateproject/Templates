@@ -49,6 +49,8 @@ import { GroupComponent } from './components/rule-builder/components/group/group
 import { NotificationComponent } from './components/notification/notification.component';
 import { GlobalSearchComponent } from './components/global-search/global-search.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { RichTextareaComponent } from './components/rich-textarea/rich-textarea.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 // import { TableListComponent } from './components/shared-component/table-list/table-list.component';
 
@@ -84,6 +86,7 @@ import { ChatComponent } from './components/chat/chat.component';
     NotificationComponent,
     GlobalSearchComponent,
     ChatComponent,
+    RichTextareaComponent,
   ],
   imports: [
     BrowserModule,
@@ -113,6 +116,8 @@ import { ChatComponent } from './components/chat/chat.component';
     MatSidenavModule,
     DragDropModule,
     MatTabsModule,
+    AngularEditorModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

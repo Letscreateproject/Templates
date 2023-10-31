@@ -17,6 +17,7 @@ import { ShoppingBasketComponent } from './components/shopping-basket/shopping-b
 import { TabsComponent } from './components/tabs/tabs.component';
 import { ApplicantDetailsComponent } from './components/applicant-details/applicant-details.component';
 import { RuleBuilderComponent } from './components/rule-builder/rule-builder.component';
+import { RichTextareaComponent } from './components/rich-textarea/rich-textarea.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,10 @@ const routes: Routes = [
       {
         path: 'shoppingBasket',
         component: ShoppingBasketComponent,
+      },
+      {
+        path: 'richTextArea',
+        component: RichTextareaComponent,
       },
     ],
   },

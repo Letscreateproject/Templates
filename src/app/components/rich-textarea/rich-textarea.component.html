@@ -1,0 +1,28 @@
+<app-common-page-header [header]="'Rich Text Box'"></app-common-page-header>
+<mat-card class="signup-page ">
+    <form [formGroup]="richTextForm" (ngSubmit)="submit()">
+        <mat-card-content>
+          <div >
+            <div class="add-wized-inner">
+              <div class="form-group" >
+                <angular-editor formControlName="textValue" #editor [(ngModel)]="htmltext"
+                  (input)="showHTML()" [config]="editorConfig"></angular-editor>
+                  <mat-error *ngIf="richTextForm.get('textValue').errors?.['required']">
+                    Text Body required
+                </mat-error>
+              </div>
+            </div>
+          </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="grid-class">
+                <!-- <div fxLayout="row" fxLayoutAlign="space-between center" class="button-act"> -->
+
+                <button mat-raised-button color="primary" type="submit" class="log-btn">SAVE</button>
+            </div>
+        </mat-card-actions>
+
+    </form>
+</mat-card>
+
